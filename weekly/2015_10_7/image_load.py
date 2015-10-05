@@ -1,7 +1,17 @@
 from skimage import io
-#from scidbpy import connect
+from scidbpy import connect
 
-#scb = connect('http://localhost:8080/')
+#Connect to localhost SciDB instance thorugh shim layer
+sdb = connect('http://localhost:8080/')
 
+#Read local image into numpy_array
 image_array = io.imread('test.jpg')
-io.imsave('test_output.jpg',image_array)
+
+#Write image to SciDB
+image_array_sdb = sdb.from_array(image_array, persistent=True)
+
+#Print out name of image
+print "SciDB: image_array_sdb.name"+image_array_sdb.name 
+
+
+#io.imsave('test_output.jpg',image_array)
