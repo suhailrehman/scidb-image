@@ -65,11 +65,11 @@ if __name__ == "__main__":
 
 	#Get the schema for the first image and create the result image in SciDB:
 	print 'Getting dimensions of first image in directory...'
-	sum_image = read_image_into_scidb(next(image_files))
+	sum_image = generate_scidb_result_array(next(image_files))
 
 	count = 0
 	#for each file in the source directory
-	for img_file in image_files:
+	for img_file in absoluteFilePaths(sys.argv[1]):
 		
 		image_array_sdb = read_image_into_scidb(img_file)
 		
@@ -80,7 +80,6 @@ if __name__ == "__main__":
 
 	#Divide by total # of images to get average
 	sum_image = sum_image / count
-
 	result_array = sum_image.toarray()
 
 	io.imsave(OUTPUT_FILE, result_array.astype(numpy.uint8))
