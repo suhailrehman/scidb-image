@@ -1,3 +1,5 @@
+#!/bin/python
+
 from skimage import io
 from scidbpy import connect
 
@@ -11,10 +13,9 @@ def absoluteFilePaths(directory):
        for f in filenames:
            yield os.path.abspath(os.path.join(dirpath, f))
 
-#TODO populate values using the first image in the series.
-IMAGE_X_DIM = 512
-IMAGE_Y_DIM = 512
+#Default Values
 OUTPUT_FILE = 'output.jpg'
+HANDLE_OVERFLOW = True
 
 #Connect to localhost SciDB instance thorugh shim layer
 sdb = connect('http://localhost:8080/')
@@ -22,32 +23,65 @@ sdb = connect('http://localhost:8080/')
 #Use PIL 
 io.use_plugin('pil')
 
-#TODO: Default: /home/scidb/Downloads/sample
-if not sys.argv[1]:
-	print "Error: Enter input directory..."
-
-#Create the result image i SciDB:
-#sdb.query(store(build(<f0:uint64>[i0=0:99,10,0,i1=0:99,10,0,i2=0:2,10,0],0,sum_array));
-if 'sum_image' in sdb.list_arrays():
-    sdb.query("remove(sum_image)")
-sdb.query("store(build(<f0:uint32>[i0=0:511,1000,0,i1=0:511,1000,0,i2=0:2,1000,0],0),sum_image)")
-sum_image = sdb.wrap_array('sum_image')
-print 'sum_image: '+ sum_image.schema
-
-count = 0
-#for each file in input argument
-for img_file in absoluteFilePaths(sys.argv[1]):
-	count+=1
+def read_image_into_scidb(img_file):
+	print 'Reading: '+img_file
 	image_array = io.imread(img_file)
-	image_array_sdb = sdb.from_array(image_array.astype(numpy.uint32))
-	print img_file+': ' + image_array_sdb.schema
-	sum_image = sum_image + image_array_sdb
-	image_array_sdb.reap()
 
-sum_image = sum_image / count
+	#Store image in SciDB
+	if HANDLE_OVERFLOW: #Extend to 32-bit int for summation
+		image_array_sdb = sdb.from_array(image_array.astype(numpy.uint32))
+	else: #Don't care, let it overflow.
+		image_array_sdb = sdb.from_array(image_array)
 
-result_array = sum_image.toarray()
+	return image_array_sdb
 
-io.imsave(OUTPUT_FILE, result_array.astype(numpy.uint8))
+def generate_scidb_result_array(img_file):
+	image_array = io.imread(img_file)
+	image_array_sdb = sdb.from_array(image_array)
+
+	print 'Dimensions: ' + image_array_sdb.schema
+
+	print 'Creating Result SciDB array based on these dimensions'
+	if 'sum_image' in sdb.list_arrays():
+		sdb.query("remove(sum_image)")
+	sdb_create_query = "store(build(%s,0),sum_image)" % image_array_sdb.schema
+
+	if HANDLE_OVERFLOW:
+		sdb_create_query.replace('uint8','uint32')
+
+	sdb.query(sdb_create_query)
+	return sdb.wrap_array('sum_image')
 
 
+if __name__ == "__main__":
+	#Parse input arguments
+	if len(sys.argv)<2:
+		print "Error: Enter input directory..."
+	if len(sys.argv)==3:
+		OUTPUT_FILE=sys.argv[2]
+
+	#Enumerate input directory:
+	image_files = absoluteFilePaths(sys.argv[1])
+
+	#Get the schema for the first image and create the result image in SciDB:
+	print 'Getting dimensions of first image in directory...'
+	sum_image = read_image_into_scidb(next(image_files))
+
+	count = 0
+	#for each file in the source directory
+	for img_file in image_files:
+		
+		image_array_sdb = read_image_into_scidb(img_file)
+		
+		#TODO: Image dimension validation here
+		sum_image = sum_image + image_array_sdb
+		image_array_sdb.reap() #Reap this image
+		count+=1
+
+	#Divide by total # of images to get average
+	sum_image = sum_image / count
+
+	result_array = sum_image.toarray()
+
+	io.imsave(OUTPUT_FILE, result_array.astype(numpy.uint8))
+	print 'Output written to: '+OUTPUT_FILE

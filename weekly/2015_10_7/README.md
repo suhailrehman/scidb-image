@@ -16,3 +16,5 @@ Goal: Explore scidb's handling of image formats.
 [scikit-image Documentation](http://scikit-image.org/docs/stable/)
 
 [SciDB-Py Documentation](http://scidb-py.readthedocs.org/en/latest/index.html)
+
+[Element-Wise Multiplicaition in SciDB](http://paradigm4.com/forum/viewtopic.php?p=1838)
