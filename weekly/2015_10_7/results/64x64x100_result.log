@@ -1,0 +1,517 @@
+Getting dimensions of first image in directory...
+Dimensions: <f0:uint8> [i0=0:63,1000,0,i1=0:63,1000,0,i2=0:2,1000,0]
+Creating Result SciDB array based on these dimensions
+Reading: /home/scidb/Downloads/thumbs100/im34.jpg
+Reading: /home/scidb/Downloads/thumbs100/im31.jpg
+Reading: /home/scidb/Downloads/thumbs100/im56.jpg
+Reading: /home/scidb/Downloads/thumbs100/im43.jpg
+Reading: /home/scidb/Downloads/thumbs100/im85.jpg
+Reading: /home/scidb/Downloads/thumbs100/im67.jpg
+Reading: /home/scidb/Downloads/thumbs100/im1.jpg
+Reading: /home/scidb/Downloads/thumbs100/im66.jpg
+Reading: /home/scidb/Downloads/thumbs100/im50.jpg
+Reading: /home/scidb/Downloads/thumbs100/im7.jpg
+Reading: /home/scidb/Downloads/thumbs100/im55.jpg
+Reading: /home/scidb/Downloads/thumbs100/im27.jpg
+Reading: /home/scidb/Downloads/thumbs100/im91.jpg
+Reading: /home/scidb/Downloads/thumbs100/im17.jpg
+Reading: /home/scidb/Downloads/thumbs100/im93.jpg
+Reading: /home/scidb/Downloads/thumbs100/im74.jpg
+Reading: /home/scidb/Downloads/thumbs100/im25.jpg
+Reading: /home/scidb/Downloads/thumbs100/im83.jpg
+Reading: /home/scidb/Downloads/thumbs100/im33.jpg
+Reading: /home/scidb/Downloads/thumbs100/im30.jpg
+Reading: /home/scidb/Downloads/thumbs100/im81.jpg
+Reading: /home/scidb/Downloads/thumbs100/im40.jpg
+Reading: /home/scidb/Downloads/thumbs100/im2.jpg
+Reading: /home/scidb/Downloads/thumbs100/im14.jpg
+Reading: /home/scidb/Downloads/thumbs100/im100.jpg
+Reading: /home/scidb/Downloads/thumbs100/im36.jpg
+Reading: /home/scidb/Downloads/thumbs100/im38.jpg
+Reading: /home/scidb/Downloads/thumbs100/im98.jpg
+Reading: /home/scidb/Downloads/thumbs100/im80.jpg
+Reading: /home/scidb/Downloads/thumbs100/im68.jpg
+Reading: /home/scidb/Downloads/thumbs100/im82.jpg
+Reading: /home/scidb/Downloads/thumbs100/im11.jpg
+Reading: /home/scidb/Downloads/thumbs100/im75.jpg
+Reading: /home/scidb/Downloads/thumbs100/im53.jpg
+Reading: /home/scidb/Downloads/thumbs100/im16.jpg
+Reading: /home/scidb/Downloads/thumbs100/im9.jpg
+Reading: /home/scidb/Downloads/thumbs100/im19.jpg
+Reading: /home/scidb/Downloads/thumbs100/im88.jpg
+Reading: /home/scidb/Downloads/thumbs100/im71.jpg
+Reading: /home/scidb/Downloads/thumbs100/im63.jpg
+Reading: /home/scidb/Downloads/thumbs100/im89.jpg
+Reading: /home/scidb/Downloads/thumbs100/im87.jpg
+Reading: /home/scidb/Downloads/thumbs100/im61.jpg
+Reading: /home/scidb/Downloads/thumbs100/im5.jpg
+Reading: /home/scidb/Downloads/thumbs100/im57.jpg
+Reading: /home/scidb/Downloads/thumbs100/im13.jpg
+Reading: /home/scidb/Downloads/thumbs100/im44.jpg
+Reading: /home/scidb/Downloads/thumbs100/im70.jpg
+Reading: /home/scidb/Downloads/thumbs100/im6.jpg
+Reading: /home/scidb/Downloads/thumbs100/im62.jpg
+Reading: /home/scidb/Downloads/thumbs100/im26.jpg
+Reading: /home/scidb/Downloads/thumbs100/im12.jpg
+Reading: /home/scidb/Downloads/thumbs100/im60.jpg
+Reading: /home/scidb/Downloads/thumbs100/im64.jpg
+Reading: /home/scidb/Downloads/thumbs100/im78.jpg
+Reading: /home/scidb/Downloads/thumbs100/im42.jpg
+Reading: /home/scidb/Downloads/thumbs100/im29.jpg
+Reading: /home/scidb/Downloads/thumbs100/im79.jpg
+Reading: /home/scidb/Downloads/thumbs100/im54.jpg
+Reading: /home/scidb/Downloads/thumbs100/im39.jpg
+Reading: /home/scidb/Downloads/thumbs100/im65.jpg
+Reading: /home/scidb/Downloads/thumbs100/im41.jpg
+Reading: /home/scidb/Downloads/thumbs100/im51.jpg
+Reading: /home/scidb/Downloads/thumbs100/im21.jpg
+Reading: /home/scidb/Downloads/thumbs100/im22.jpg
+Reading: /home/scidb/Downloads/thumbs100/im45.jpg
+Reading: /home/scidb/Downloads/thumbs100/im46.jpg
+Reading: /home/scidb/Downloads/thumbs100/im95.jpg
+Reading: /home/scidb/Downloads/thumbs100/im8.jpg
+Reading: /home/scidb/Downloads/thumbs100/im35.jpg
+Reading: /home/scidb/Downloads/thumbs100/im52.jpg
+Reading: /home/scidb/Downloads/thumbs100/im18.jpg
+Reading: /home/scidb/Downloads/thumbs100/im24.jpg
+Reading: /home/scidb/Downloads/thumbs100/im4.jpg
+Reading: /home/scidb/Downloads/thumbs100/im94.jpg
+Reading: /home/scidb/Downloads/thumbs100/im23.jpg
+Reading: /home/scidb/Downloads/thumbs100/im58.jpg
+Reading: /home/scidb/Downloads/thumbs100/im49.jpg
+Reading: /home/scidb/Downloads/thumbs100/im99.jpg
+Reading: /home/scidb/Downloads/thumbs100/im20.jpg
+Reading: /home/scidb/Downloads/thumbs100/im77.jpg
+Reading: /home/scidb/Downloads/thumbs100/im84.jpg
+Reading: /home/scidb/Downloads/thumbs100/im28.jpg
+Reading: /home/scidb/Downloads/thumbs100/im10.jpg
+Reading: /home/scidb/Downloads/thumbs100/im47.jpg
+Reading: /home/scidb/Downloads/thumbs100/im76.jpg
+Reading: /home/scidb/Downloads/thumbs100/im97.jpg
+Reading: /home/scidb/Downloads/thumbs100/im3.jpg
+Reading: /home/scidb/Downloads/thumbs100/im48.jpg
+Reading: /home/scidb/Downloads/thumbs100/im72.jpg
+Reading: /home/scidb/Downloads/thumbs100/im90.jpg
+Reading: /home/scidb/Downloads/thumbs100/im15.jpg
+Reading: /home/scidb/Downloads/thumbs100/im37.jpg
+Reading: /home/scidb/Downloads/thumbs100/im59.jpg
+Reading: /home/scidb/Downloads/thumbs100/im32.jpg
+Reading: /home/scidb/Downloads/thumbs100/im96.jpg
+Reading: /home/scidb/Downloads/thumbs100/im92.jpg
+Reading: /home/scidb/Downloads/thumbs100/im69.jpg
+Reading: /home/scidb/Downloads/thumbs100/im86.jpg
+Reading: /home/scidb/Downloads/thumbs100/im73.jpg
+Output written to: output.jpg
+
+Timing Info:
+============
+Initiating SciDB connection :0.765 sec
+Reading first file and generating empty array :1.068 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im34.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im34.jpg :0.158 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im34.jpg :0.336 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im34.jpg :0.080 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im31.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im31.jpg :0.137 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im31.jpg :0.650 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im31.jpg :0.037 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im56.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im56.jpg :0.139 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im56.jpg :0.622 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im56.jpg :0.051 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im43.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im43.jpg :0.191 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im43.jpg :0.664 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im43.jpg :0.075 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im85.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im85.jpg :0.162 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im85.jpg :0.649 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im85.jpg :0.078 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im67.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im67.jpg :0.131 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im67.jpg :0.651 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im67.jpg :0.066 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im1.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im1.jpg :0.164 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im1.jpg :0.614 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im1.jpg :0.069 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im66.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im66.jpg :0.175 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im66.jpg :0.673 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im66.jpg :0.050 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im50.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im50.jpg :0.146 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im50.jpg :0.647 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im50.jpg :0.069 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im7.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im7.jpg :0.136 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im7.jpg :0.648 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im7.jpg :0.044 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im55.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im55.jpg :0.130 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im55.jpg :0.622 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im55.jpg :0.080 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im27.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im27.jpg :0.151 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im27.jpg :0.655 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im27.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im91.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im91.jpg :0.151 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im91.jpg :0.632 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im91.jpg :0.054 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im17.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im17.jpg :0.168 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im17.jpg :0.633 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im17.jpg :0.065 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im93.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im93.jpg :0.206 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im93.jpg :0.788 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im93.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im74.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im74.jpg :0.134 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im74.jpg :0.659 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im74.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im25.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im25.jpg :0.143 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im25.jpg :0.633 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im25.jpg :0.040 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im83.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im83.jpg :0.135 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im83.jpg :0.681 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im83.jpg :0.077 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im33.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im33.jpg :0.139 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im33.jpg :0.681 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im33.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im30.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im30.jpg :0.141 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im30.jpg :0.644 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im30.jpg :0.069 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im81.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im81.jpg :0.163 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im81.jpg :0.673 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im81.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im40.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im40.jpg :0.129 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im40.jpg :0.682 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im40.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im2.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im2.jpg :0.170 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im2.jpg :0.671 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im2.jpg :0.078 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im14.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im14.jpg :0.130 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im14.jpg :0.643 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im14.jpg :0.060 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im100.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im100.jpg :0.182 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im100.jpg :0.675 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im100.jpg :0.068 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im36.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im36.jpg :0.119 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im36.jpg :0.647 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im36.jpg :0.052 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im38.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im38.jpg :0.148 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im38.jpg :0.660 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im38.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im98.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im98.jpg :0.141 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im98.jpg :0.657 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im98.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im80.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im80.jpg :0.177 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im80.jpg :0.635 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im80.jpg :0.064 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im68.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im68.jpg :0.130 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im68.jpg :0.678 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im68.jpg :0.094 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im82.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im82.jpg :0.162 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im82.jpg :0.772 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im82.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im11.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im11.jpg :0.119 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im11.jpg :0.700 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im11.jpg :0.066 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im75.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im75.jpg :0.154 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im75.jpg :0.647 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im75.jpg :0.065 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im53.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im53.jpg :0.548 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im53.jpg :0.682 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im53.jpg :0.065 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im16.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im16.jpg :0.174 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im16.jpg :0.703 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im16.jpg :0.047 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im9.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im9.jpg :0.135 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im9.jpg :0.651 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im9.jpg :0.045 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im19.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im19.jpg :0.141 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im19.jpg :0.674 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im19.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im88.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im88.jpg :0.153 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im88.jpg :0.658 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im88.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im71.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im71.jpg :0.153 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im71.jpg :0.659 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im71.jpg :0.078 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im63.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im63.jpg :0.132 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im63.jpg :0.665 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im63.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im89.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im89.jpg :0.152 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im89.jpg :0.681 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im89.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im87.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im87.jpg :0.150 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im87.jpg :0.645 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im87.jpg :0.047 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im61.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im61.jpg :0.151 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im61.jpg :0.648 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im61.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im5.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im5.jpg :0.157 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im5.jpg :0.678 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im5.jpg :0.072 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im57.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im57.jpg :0.151 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im57.jpg :0.751 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im57.jpg :0.107 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im13.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im13.jpg :0.225 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im13.jpg :0.633 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im13.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im44.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im44.jpg :0.132 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im44.jpg :0.698 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im44.jpg :0.073 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im70.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im70.jpg :0.151 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im70.jpg :0.660 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im70.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im6.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im6.jpg :0.182 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im6.jpg :0.649 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im6.jpg :0.087 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im62.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im62.jpg :0.132 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im62.jpg :0.641 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im62.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im26.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im26.jpg :0.152 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im26.jpg :0.642 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im26.jpg :0.087 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im12.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im12.jpg :0.129 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im12.jpg :0.665 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im12.jpg :0.050 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im60.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im60.jpg :0.144 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im60.jpg :0.699 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im60.jpg :0.080 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im64.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im64.jpg :0.122 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im64.jpg :0.684 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im64.jpg :0.078 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im78.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im78.jpg :0.131 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im78.jpg :0.699 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im78.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im42.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im42.jpg :0.134 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im42.jpg :0.639 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im42.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im29.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im29.jpg :0.161 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im29.jpg :0.648 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im29.jpg :0.108 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im79.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im79.jpg :0.220 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im79.jpg :0.629 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im79.jpg :0.068 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im54.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im54.jpg :0.134 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im54.jpg :0.683 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im54.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im39.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im39.jpg :0.216 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im39.jpg :0.637 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im39.jpg :0.091 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im65.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im65.jpg :0.148 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im65.jpg :0.691 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im65.jpg :0.117 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im41.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im41.jpg :0.234 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im41.jpg :0.623 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im41.jpg :0.056 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im51.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im51.jpg :0.180 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im51.jpg :0.653 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im51.jpg :0.052 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im21.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im21.jpg :0.157 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im21.jpg :0.625 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im21.jpg :0.079 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im22.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im22.jpg :0.137 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im22.jpg :0.654 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im22.jpg :0.068 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im45.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im45.jpg :0.151 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im45.jpg :0.670 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im45.jpg :0.061 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im46.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im46.jpg :0.166 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im46.jpg :0.761 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im46.jpg :0.072 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im95.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im95.jpg :0.159 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im95.jpg :0.677 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im95.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im8.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im8.jpg :0.161 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im8.jpg :0.651 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im8.jpg :0.078 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im35.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im35.jpg :0.131 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im35.jpg :0.666 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im35.jpg :0.073 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im52.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im52.jpg :0.142 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im52.jpg :0.667 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im52.jpg :0.051 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im18.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im18.jpg :0.157 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im18.jpg :0.653 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im18.jpg :0.103 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im24.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im24.jpg :0.169 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im24.jpg :0.621 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im24.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im4.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im4.jpg :0.141 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im4.jpg :0.664 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im4.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im94.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im94.jpg :0.169 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im94.jpg :0.753 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im94.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im23.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im23.jpg :0.211 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im23.jpg :0.647 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im23.jpg :0.066 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im58.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im58.jpg :0.126 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im58.jpg :0.657 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im58.jpg :0.052 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im49.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im49.jpg :0.169 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im49.jpg :0.647 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im49.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im99.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im99.jpg :0.150 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im99.jpg :0.705 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im99.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im20.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im20.jpg :0.147 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im20.jpg :0.675 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im20.jpg :0.064 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im77.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im77.jpg :0.164 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im77.jpg :0.684 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im77.jpg :0.060 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im84.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im84.jpg :0.166 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im84.jpg :0.691 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im84.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im28.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im28.jpg :0.132 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im28.jpg :0.659 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im28.jpg :0.039 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im10.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im10.jpg :0.165 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im10.jpg :0.672 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im10.jpg :0.111 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im47.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im47.jpg :0.202 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im47.jpg :0.699 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im47.jpg :0.071 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im76.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im76.jpg :0.170 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im76.jpg :0.665 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im76.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im97.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im97.jpg :0.155 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im97.jpg :0.662 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im97.jpg :0.079 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im3.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im3.jpg :0.147 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im3.jpg :0.666 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im3.jpg :0.084 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im48.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im48.jpg :0.133 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im48.jpg :0.690 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im48.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im72.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im72.jpg :0.169 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im72.jpg :0.690 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im72.jpg :0.086 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im90.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im90.jpg :0.172 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im90.jpg :0.673 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im90.jpg :0.072 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im15.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im15.jpg :0.141 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im15.jpg :0.653 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im15.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im37.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im37.jpg :0.168 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im37.jpg :0.661 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im37.jpg :0.071 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im59.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im59.jpg :0.179 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im59.jpg :0.692 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im59.jpg :0.053 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im32.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im32.jpg :0.166 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im32.jpg :0.652 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im32.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im96.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im96.jpg :0.173 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im96.jpg :0.653 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im96.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im92.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im92.jpg :0.169 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im92.jpg :0.694 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im92.jpg :0.061 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im69.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im69.jpg :0.140 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im69.jpg :0.679 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im69.jpg :0.088 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im86.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im86.jpg :0.147 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im86.jpg :0.695 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im86.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/thumbs100/im73.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs100/im73.jpg :0.154 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs100/im73.jpg :0.723 sec
+Reaping Image: /home/scidb/Downloads/thumbs100/im73.jpg :0.076 sec
+Scalar division on result array :0.332 sec
+Fetching result array from SciDB :0.254 sec
+Writing final output to disk :0.002 sec
+
+
+real	1m48.621s
+user	0m6.464s
+sys	0m0.740s

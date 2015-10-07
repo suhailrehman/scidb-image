@@ -1,0 +1,67 @@
+Getting dimensions of first image in directory...
+Dimensions: <f0:uint8> [i0=0:63,1000,0,i1=0:63,1000,0,i2=0:2,1000,0]
+Creating Result SciDB array based on these dimensions
+Reading: /home/scidb/Downloads/thumbs10/im1.jpg
+Reading: /home/scidb/Downloads/thumbs10/im7.jpg
+Reading: /home/scidb/Downloads/thumbs10/im2.jpg
+Reading: /home/scidb/Downloads/thumbs10/im9.jpg
+Reading: /home/scidb/Downloads/thumbs10/im5.jpg
+Reading: /home/scidb/Downloads/thumbs10/im6.jpg
+Reading: /home/scidb/Downloads/thumbs10/im8.jpg
+Reading: /home/scidb/Downloads/thumbs10/im4.jpg
+Reading: /home/scidb/Downloads/thumbs10/im10.jpg
+Reading: /home/scidb/Downloads/thumbs10/im3.jpg
+Output written to: output.jpg
+
+Timing Info:
+============
+Initiating SciDB connection :0.714 sec
+Reading first file and generating empty array :1.084 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im1.jpg :0.000 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im1.jpg :0.144 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im1.jpg :0.371 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im1.jpg :0.043 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im7.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im7.jpg :0.160 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im7.jpg :0.654 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im7.jpg :0.061 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im2.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im2.jpg :0.146 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im2.jpg :0.597 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im2.jpg :0.098 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im9.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im9.jpg :0.254 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im9.jpg :0.605 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im9.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im5.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im5.jpg :0.284 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im5.jpg :0.679 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im5.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im6.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im6.jpg :0.251 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im6.jpg :0.589 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im6.jpg :0.098 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im8.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im8.jpg :0.138 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im8.jpg :0.603 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im8.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im4.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im4.jpg :0.144 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im4.jpg :0.619 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im4.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im10.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im10.jpg :0.156 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im10.jpg :0.669 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im10.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/thumbs10/im3.jpg :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/thumbs10/im3.jpg :0.128 sec
+Adding image file to Sum: /home/scidb/Downloads/thumbs10/im3.jpg :0.610 sec
+Reaping Image: /home/scidb/Downloads/thumbs10/im3.jpg :0.053 sec
+Scalar division on result array :0.353 sec
+Fetching result array from SciDB :0.234 sec
+Writing final output to disk :0.001 sec
+
+
+real	0m13.091s
+user	0m1.068s
+sys	0m0.124s

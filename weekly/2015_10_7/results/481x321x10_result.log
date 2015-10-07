@@ -1,0 +1,67 @@
+Getting dimensions of first image in directory...
+Dimensions: <f0:uint8> [i0=0:320,1000,0,i1=0:480,1000,0,i2=0:2,1000,0]
+Creating Result SciDB array based on these dimensions
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/16052.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/12074.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/14037.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/12084.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/8049.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/8023.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/3096.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/12003.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/2092.jpg
+Reading: /home/scidb/Downloads/BSDS/10-horizontal/8143.jpg
+Output written to: output.jpg
+
+Timing Info:
+============
+Initiating SciDB connection :0.949 sec
+Reading first file and generating empty array :2.450 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/16052.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/16052.jpg :0.603 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/16052.jpg :1.742 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/16052.jpg :0.061 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/12074.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/12074.jpg :0.727 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/12074.jpg :4.803 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/12074.jpg :0.081 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/14037.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/14037.jpg :0.636 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/14037.jpg :4.794 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/14037.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/12084.jpg :0.005 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/12084.jpg :0.756 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/12084.jpg :5.638 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/12084.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/8049.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/8049.jpg :0.631 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/8049.jpg :5.142 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/8049.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/8023.jpg :0.005 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/8023.jpg :0.698 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/8023.jpg :5.565 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/8023.jpg :0.094 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/3096.jpg :0.007 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/3096.jpg :0.679 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/3096.jpg :5.035 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/3096.jpg :0.085 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/12003.jpg :0.007 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/12003.jpg :0.787 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/12003.jpg :5.406 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/12003.jpg :0.085 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/2092.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/2092.jpg :0.678 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/2092.jpg :5.834 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/2092.jpg :0.080 sec
+Reading image file: /home/scidb/Downloads/BSDS/10-horizontal/8143.jpg :0.005 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/10-horizontal/8143.jpg :0.846 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/10-horizontal/8143.jpg :5.688 sec
+Reaping Image: /home/scidb/Downloads/BSDS/10-horizontal/8143.jpg :0.092 sec
+Scalar division on result array :3.157 sec
+Fetching result array from SciDB :4.268 sec
+Writing final output to disk :0.048 sec
+
+
+real	1m10.980s
+user	0m1.680s
+sys	0m0.384s

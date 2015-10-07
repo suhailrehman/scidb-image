@@ -1,0 +1,517 @@
+Getting dimensions of first image in directory...
+Dimensions: <f0:uint8> [i0=0:320,1000,0,i1=0:480,1000,0,i2=0:2,1000,0]
+Creating Result SciDB array based on these dimensions
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/167062.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/45096.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/35091.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/58060.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/134035.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/41004.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/145086.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/16052.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/300091.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/119082.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/260058.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/108070.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/12074.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/306005.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/291000.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/69040.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/87046.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/14037.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/19021.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/361010.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/37073.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/65033.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/241048.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/38092.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/85048.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/12084.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/35058.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/41025.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/8049.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/130026.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/108005.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/299086.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/43074.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/41069.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/123074.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/21077.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/22090.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/35070.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/253027.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/8023.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/241004.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/229036.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/236037.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/28075.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/159008.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/3096.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/42044.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/385039.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/304034.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/296007.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/42049.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/41033.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/42078.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/12003.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/223061.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/219090.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/16077.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/148089.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/126007.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/351093.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/143090.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/147091.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/86016.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/97033.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/170057.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/196073.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/157055.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/295087.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/23080.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/2092.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/220075.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/24077.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/66053.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/103070.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/175043.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/23084.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/8143.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/253055.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/86068.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/216081.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/33066.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/109053.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/156065.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/106024.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/24063.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/69020.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/43070.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/35008.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/105025.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/182053.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/35010.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/163085.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/296059.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/62096.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/197017.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/108082.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/28096.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/160068.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/76053.jpg
+Reading: /home/scidb/Downloads/BSDS/100-horizontal/38082.jpg
+Output written to: output.jpg
+
+Timing Info:
+============
+Initiating SciDB connection :0.701 sec
+Reading first file and generating empty array :1.943 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/167062.jpg :0.002 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/167062.jpg :0.668 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/167062.jpg :1.620 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/167062.jpg :0.036 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/45096.jpg :0.002 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/45096.jpg :0.562 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/45096.jpg :4.321 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/45096.jpg :0.088 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/35091.jpg :0.005 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/35091.jpg :0.631 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/35091.jpg :4.362 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/35091.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/58060.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/58060.jpg :0.570 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/58060.jpg :4.206 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/58060.jpg :0.072 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/134035.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/134035.jpg :0.589 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/134035.jpg :4.738 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/134035.jpg :0.129 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/41004.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/41004.jpg :0.715 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/41004.jpg :4.818 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/41004.jpg :0.113 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/145086.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/145086.jpg :0.743 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/145086.jpg :5.025 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/145086.jpg :0.132 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/16052.jpg :0.005 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/16052.jpg :0.661 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/16052.jpg :4.727 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/16052.jpg :0.128 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/300091.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/300091.jpg :0.672 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/300091.jpg :4.713 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/300091.jpg :0.093 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/119082.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/119082.jpg :0.573 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/119082.jpg :4.644 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/119082.jpg :0.086 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/260058.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/260058.jpg :0.584 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/260058.jpg :4.692 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/260058.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/108070.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/108070.jpg :0.563 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/108070.jpg :4.377 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/108070.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/12074.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/12074.jpg :0.569 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/12074.jpg :4.362 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/12074.jpg :0.066 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/306005.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/306005.jpg :0.570 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/306005.jpg :4.379 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/306005.jpg :0.072 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/291000.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/291000.jpg :0.677 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/291000.jpg :4.388 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/291000.jpg :0.065 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/69040.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/69040.jpg :0.593 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/69040.jpg :4.370 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/69040.jpg :0.053 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/87046.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/87046.jpg :0.570 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/87046.jpg :4.529 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/87046.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/14037.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/14037.jpg :0.600 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/14037.jpg :4.464 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/14037.jpg :0.068 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/19021.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/19021.jpg :0.610 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/19021.jpg :4.363 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/19021.jpg :0.084 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/361010.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/361010.jpg :0.634 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/361010.jpg :4.422 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/361010.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/37073.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/37073.jpg :0.564 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/37073.jpg :4.428 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/37073.jpg :0.072 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/65033.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/65033.jpg :0.570 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/65033.jpg :4.377 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/65033.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/241048.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/241048.jpg :0.604 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/241048.jpg :4.372 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/241048.jpg :0.076 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/38092.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/38092.jpg :0.587 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/38092.jpg :4.493 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/38092.jpg :0.124 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/85048.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/85048.jpg :0.646 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/85048.jpg :4.467 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/85048.jpg :0.068 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/12084.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/12084.jpg :0.613 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/12084.jpg :4.391 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/12084.jpg :0.073 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/35058.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/35058.jpg :0.613 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/35058.jpg :4.414 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/35058.jpg :0.053 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/41025.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/41025.jpg :0.672 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/41025.jpg :4.435 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/41025.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/8049.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/8049.jpg :0.618 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/8049.jpg :4.435 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/8049.jpg :0.130 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/130026.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/130026.jpg :0.646 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/130026.jpg :4.364 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/130026.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/108005.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/108005.jpg :0.589 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/108005.jpg :4.331 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/108005.jpg :0.074 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/299086.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/299086.jpg :0.601 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/299086.jpg :4.404 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/299086.jpg :0.078 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/43074.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/43074.jpg :0.578 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/43074.jpg :4.348 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/43074.jpg :0.052 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/41069.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/41069.jpg :0.617 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/41069.jpg :4.505 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/41069.jpg :0.066 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/123074.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/123074.jpg :0.605 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/123074.jpg :4.496 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/123074.jpg :0.121 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/21077.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/21077.jpg :0.630 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/21077.jpg :4.540 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/21077.jpg :0.144 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/22090.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/22090.jpg :0.633 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/22090.jpg :4.507 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/22090.jpg :0.076 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/35070.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/35070.jpg :0.577 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/35070.jpg :4.486 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/35070.jpg :0.101 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/253027.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/253027.jpg :0.637 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/253027.jpg :4.392 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/253027.jpg :0.066 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/8023.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/8023.jpg :0.566 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/8023.jpg :4.490 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/8023.jpg :0.079 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/241004.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/241004.jpg :0.586 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/241004.jpg :4.434 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/241004.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/229036.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/229036.jpg :0.553 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/229036.jpg :4.388 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/229036.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/236037.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/236037.jpg :0.587 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/236037.jpg :4.405 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/236037.jpg :0.137 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/28075.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/28075.jpg :0.615 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/28075.jpg :4.407 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/28075.jpg :0.054 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/159008.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/159008.jpg :0.598 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/159008.jpg :4.400 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/159008.jpg :0.069 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/3096.jpg :0.002 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/3096.jpg :0.581 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/3096.jpg :4.506 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/3096.jpg :0.078 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/42044.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/42044.jpg :0.563 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/42044.jpg :4.429 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/42044.jpg :0.064 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/385039.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/385039.jpg :0.564 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/385039.jpg :4.546 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/385039.jpg :0.107 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/304034.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/304034.jpg :0.675 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/304034.jpg :4.370 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/304034.jpg :0.054 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/296007.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/296007.jpg :0.569 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/296007.jpg :4.386 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/296007.jpg :0.055 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/42049.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/42049.jpg :0.559 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/42049.jpg :4.477 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/42049.jpg :0.086 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/41033.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/41033.jpg :0.726 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/41033.jpg :5.551 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/41033.jpg :0.077 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/42078.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/42078.jpg :0.612 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/42078.jpg :5.531 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/42078.jpg :0.065 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/12003.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/12003.jpg :0.586 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/12003.jpg :4.426 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/12003.jpg :0.134 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/223061.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/223061.jpg :0.625 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/223061.jpg :4.487 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/223061.jpg :0.117 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/219090.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/219090.jpg :0.630 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/219090.jpg :4.501 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/219090.jpg :0.084 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/16077.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/16077.jpg :0.595 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/16077.jpg :4.432 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/16077.jpg :0.072 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/148089.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/148089.jpg :0.716 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/148089.jpg :4.485 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/148089.jpg :0.055 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/126007.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/126007.jpg :0.576 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/126007.jpg :4.368 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/126007.jpg :0.057 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/351093.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/351093.jpg :0.605 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/351093.jpg :4.426 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/351093.jpg :0.052 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/143090.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/143090.jpg :0.599 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/143090.jpg :4.442 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/143090.jpg :0.052 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/147091.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/147091.jpg :0.588 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/147091.jpg :4.566 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/147091.jpg :0.137 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/86016.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/86016.jpg :0.663 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/86016.jpg :4.370 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/86016.jpg :0.069 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/97033.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/97033.jpg :0.584 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/97033.jpg :4.467 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/97033.jpg :0.062 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/170057.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/170057.jpg :0.582 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/170057.jpg :4.451 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/170057.jpg :0.081 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/196073.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/196073.jpg :0.588 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/196073.jpg :4.380 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/196073.jpg :0.054 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/157055.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/157055.jpg :0.598 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/157055.jpg :4.597 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/157055.jpg :0.060 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/295087.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/295087.jpg :0.566 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/295087.jpg :4.390 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/295087.jpg :0.060 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/23080.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/23080.jpg :0.601 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/23080.jpg :4.342 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/23080.jpg :0.074 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/2092.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/2092.jpg :0.551 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/2092.jpg :4.392 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/2092.jpg :0.087 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/220075.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/220075.jpg :0.575 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/220075.jpg :4.544 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/220075.jpg :0.064 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/24077.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/24077.jpg :0.596 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/24077.jpg :4.417 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/24077.jpg :0.089 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/66053.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/66053.jpg :0.589 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/66053.jpg :4.444 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/66053.jpg :0.056 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/103070.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/103070.jpg :0.615 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/103070.jpg :4.516 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/103070.jpg :0.055 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/175043.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/175043.jpg :0.622 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/175043.jpg :4.724 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/175043.jpg :0.063 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/23084.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/23084.jpg :0.560 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/23084.jpg :4.427 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/23084.jpg :0.071 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/8143.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/8143.jpg :0.648 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/8143.jpg :4.443 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/8143.jpg :0.059 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/253055.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/253055.jpg :0.571 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/253055.jpg :4.383 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/253055.jpg :0.077 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/86068.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/86068.jpg :0.569 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/86068.jpg :4.373 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/86068.jpg :0.074 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/216081.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/216081.jpg :0.601 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/216081.jpg :4.400 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/216081.jpg :0.060 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/33066.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/33066.jpg :0.653 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/33066.jpg :4.560 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/33066.jpg :0.133 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/109053.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/109053.jpg :0.666 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/109053.jpg :4.428 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/109053.jpg :0.048 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/156065.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/156065.jpg :0.562 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/156065.jpg :4.445 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/156065.jpg :0.127 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/106024.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/106024.jpg :0.625 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/106024.jpg :4.506 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/106024.jpg :0.090 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/24063.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/24063.jpg :0.637 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/24063.jpg :4.454 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/24063.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/69020.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/69020.jpg :0.600 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/69020.jpg :4.473 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/69020.jpg :0.067 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/43070.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/43070.jpg :0.579 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/43070.jpg :4.442 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/43070.jpg :0.070 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/35008.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/35008.jpg :0.559 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/35008.jpg :4.365 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/35008.jpg :0.089 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/105025.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/105025.jpg :0.585 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/105025.jpg :4.404 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/105025.jpg :0.071 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/182053.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/182053.jpg :0.554 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/182053.jpg :4.528 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/182053.jpg :0.087 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/35010.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/35010.jpg :0.633 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/35010.jpg :4.422 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/35010.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/163085.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/163085.jpg :0.569 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/163085.jpg :4.330 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/163085.jpg :0.087 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/296059.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/296059.jpg :0.593 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/296059.jpg :4.395 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/296059.jpg :0.058 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/62096.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/62096.jpg :0.706 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/62096.jpg :4.417 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/62096.jpg :0.054 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/197017.jpg :0.004 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/197017.jpg :0.589 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/197017.jpg :4.354 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/197017.jpg :0.086 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/108082.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/108082.jpg :0.752 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/108082.jpg :4.527 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/108082.jpg :0.077 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/28096.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/28096.jpg :0.556 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/28096.jpg :4.371 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/28096.jpg :0.054 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/160068.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/160068.jpg :0.591 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/160068.jpg :4.314 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/160068.jpg :0.061 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/76053.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/76053.jpg :0.567 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/76053.jpg :4.512 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/76053.jpg :0.126 sec
+Reading image file: /home/scidb/Downloads/BSDS/100-horizontal/38082.jpg :0.003 sec
+Storing image file in DB: /home/scidb/Downloads/BSDS/100-horizontal/38082.jpg :0.623 sec
+Adding image file to Sum: /home/scidb/Downloads/BSDS/100-horizontal/38082.jpg :4.498 sec
+Reaping Image: /home/scidb/Downloads/BSDS/100-horizontal/38082.jpg :0.102 sec
+Scalar division on result array :2.925 sec
+Fetching result array from SciDB :3.448 sec
+Writing final output to disk :0.019 sec
+
+
+real	8m59.350s
+user	0m6.836s
+sys	0m1.168s

@@ -1,0 +1,27 @@
+Getting dimensions of first image in directory...
+Dimensions: <f0:uint8> [i0=0:511,1000,0,i1=0:511,1000,0,i2=0:2,1000,0]
+Creating Result SciDB array based on these dimensions
+Reading: /home/scidb/Downloads/lena/test1.jpg
+Reading: /home/scidb/Downloads/lena/1.tiff
+Output written to: output.jpg
+
+Timing Info:
+============
+Initiating SciDB connection :0.078 sec
+Reading first file and generating empty array :0.111 sec
+Reading image file: /home/scidb/Downloads/lena/test1.jpg :0.007 sec
+Storing image file in DB: /home/scidb/Downloads/lena/test1.jpg :0.024 sec
+Adding image file to Sum: /home/scidb/Downloads/lena/test1.jpg :0.025 sec
+Reaping Image: /home/scidb/Downloads/lena/test1.jpg :0.002 sec
+Reading image file: /home/scidb/Downloads/lena/1.tiff :0.001 sec
+Storing image file in DB: /home/scidb/Downloads/lena/1.tiff :0.024 sec
+Adding image file to Sum: /home/scidb/Downloads/lena/1.tiff :0.033 sec
+Reaping Image: /home/scidb/Downloads/lena/1.tiff :0.002 sec
+Scalar division on result array :0.014 sec
+Fetching result array from SciDB :0.107 sec
+Writing final output to disk :0.046 sec
+
+
+real	0m25.747s
+user	0m0.656s
+sys	0m0.176s
