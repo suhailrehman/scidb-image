@@ -9,7 +9,7 @@ import numpy
 
 import timer
 
-#Helper function to get 
+#Helper function to get file paths of each image
 def absoluteFilePaths(directory):
    for dirpath,_,filenames in os.walk(directory):
        for f in filenames:
