@@ -33,11 +33,11 @@ file_list * read_files(char *directory, int &count)
         
         //printf("debug: %s\n", dp->d_name);
         
-        if ( !strcmp(dp->d_name, ".") || !strcmp(dp->d_name, "..") )
+        if ( !strcmp(dp->d_name, ".") || !strcmp(dp->d_name, "..") || dp->d_type == DT_DIR) //Skip subdirectories
         {
             // do nothing (straight logic)
         } 
-        else //TODO: Skip subdirectories
+        else
         {
             file_name = dp->d_name;
             current = (file_list*) malloc(sizeof(file_list));
@@ -68,7 +68,10 @@ float *rand_image_weights(int n, int seed)
 	float *weights = (float*) malloc(sizeof(float)*n); 
 
 	for(int i=0;i<n;i++)
+	{
 		weights[i]= (float) rand() / (float) RAND_MAX;
+		printf("Weight of Image %d is %.2f\n",i, weights[i]);
+	}
 
 	return weights;
 }
@@ -97,7 +100,7 @@ int main (int argc, char* argv[])
 	int height = src.height();
 	
 	//Create initial black image
-	CImg<unsigned char> avg (width,height,1,3,0);
+	CImg<double> avg (width,height,1,3,0);
 
 	int count = 0;
 	//TODO: Loop over all images in directory
@@ -108,15 +111,19 @@ int main (int argc, char* argv[])
 
 		#pragma omp parallel for
 		cimg_forXYC(avg,x,y,c) {  // Do 3 nested loops
-	   		avg(x,y,c) = avg(x,y,c) + next(x,y,c); 
-	   		avg(x,y,c) = avg(x,y,c) / weights[count]; //TODO: Get image weight here and multiply
+	   		avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[count]); 
 		}
 
  		ptr=ptr->next;
 		count++;
 	}
 
-	CImgDisplay main_disp(avg,"Average Image");
+	#pragma omp parallel for
+	cimg_forXYC(avg,x,y,c) {  // Do 3 nested loops
+	   		avg(x,y,c) = avg(x,y,c) / filecount; 
+	}
+
+	//CImgDisplay main_disp(avg,"Average Image");
 
 	//TODO: Custom Output image save
 	avg.save("output.jpg");
