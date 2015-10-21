@@ -3,6 +3,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+#include <omp.h>
+
  
 using namespace cimg_library;
 
@@ -60,9 +62,11 @@ file_list * read_files(char *directory, int &count)
 *	Generate random image weight array of floats [0,1]
 *	of length n, using a random seed
 */
-float *rand_image_weights(int n, int seed)
+float *rand_image_weights(int n, int seed, float &sum)
 {
 	srand(seed);
+
+	sum=0;
 
 	//Initialize weight array
 	float *weights = (float*) malloc(sizeof(float)*n); 
@@ -71,6 +75,7 @@ float *rand_image_weights(int n, int seed)
 	{
 		weights[i]= (float) rand() / (float) RAND_MAX;
 		printf("Weight of Image %d is %.2f\n",i, weights[i]);
+		sum+=weights[i];
 	}
 
 	return weights;
@@ -89,9 +94,18 @@ int main (int argc, char* argv[])
 
 	printf("File Count: %d\n", filecount);
 
+	if(argc==3) //If thread count is specified
+	{
+		printf("Setting Thread Count to %d\n",atoi(argv[2]));
+		omp_set_num_threads(atoi(argv[2]));
+	}
+
+	printf("Using %d thread(s) to compute average\n", omp_get_max_threads());
+
 
 	//Generate random list of weights;
-	float *weights = rand_image_weights(filecount,time(NULL));
+	float weight_sum;
+	float *weights = rand_image_weights(filecount,time(NULL),weight_sum);
 
 	//Load first image to get dimensions - 
 	//TODO: replace with canvas properties for the future
@@ -103,27 +117,34 @@ int main (int argc, char* argv[])
 	CImg<double> avg (width,height,1,3,0);
 
 	int count = 0;
+	double start_time, weighted_sum_time=0, scalar_divide_time=0;
 	//TODO: Loop over all images in directory
 	while(ptr!=NULL)
 	{
 		//Load next image
 		CImg<unsigned char> next(ptr->filename);
 
+		start_time = omp_get_wtime();
 		#pragma omp parallel for
 		cimg_forXYC(avg,x,y,c) {  // Do 3 nested loops
 	   		avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[count]); 
 		}
+		weighted_sum_time += (omp_get_wtime() - start_time);
+
 
  		ptr=ptr->next;
 		count++;
 	}
 
+	start_time = omp_get_wtime();
 	#pragma omp parallel for
 	cimg_forXYC(avg,x,y,c) {  // Do 3 nested loops
-	   		avg(x,y,c) = avg(x,y,c) / filecount; 
+	   		avg(x,y,c) = avg(x,y,c) / weight_sum; 
 	}
+	scalar_divide_time = (omp_get_wtime() - start_time);
 
-	//CImgDisplay main_disp(avg,"Average Image");
+	printf("Weighted Sum Time: %.6f seconds\n",weighted_sum_time);
+	printf("Scalar Division Time: %.6f seconds\n",scalar_divide_time);
 
 	//TODO: Custom Output image save
 	avg.save("output.jpg");

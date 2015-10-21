@@ -6,7 +6,7 @@ PATH=$PATH:"/home/scidb/scidb/scidbtrunk/stage/install/bin"
 DIRECTORY="/home/scidb/Downloads/thumbs10/"
 
 
-WEIGHTTOTAL=`python image_average.py $DIRECTORY | tail -n 1`
+WEIGHTTOTAL=`python image_load.py $DIRECTORY | tail -n 1`
 
 echo $WEIGHTTOTAL
 
