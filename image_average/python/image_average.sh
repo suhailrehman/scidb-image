@@ -5,6 +5,12 @@ PATH=$PATH:"/home/scidb/scidb/scidbtrunk/stage/install/bin"
 
 DIRECTORY="/home/scidb/Downloads/thumbs10/"
 
+if [ -z "$1" ]
+  then
+	DIRECTORY="/home/scidb/Downloads/thumbs10/"
+else
+	DIRECTORY="$1"
+fi
 
 WEIGHTTOTAL=`python image_load.py $DIRECTORY | tail -n 1`
 

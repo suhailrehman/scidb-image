@@ -73,8 +73,8 @@ float *rand_image_weights(int n, int seed, float &sum)
 
 	for(int i=0;i<n;i++)
 	{
-		weights[i]= (float) rand() / (float) RAND_MAX;
-		printf("Weight of Image %d is %.2f\n",i, weights[i]);
+		weights[i]= rand() % 10;
+		//printf("Weight of Image %d is %.2f\n",i, weights[i]);
 		sum+=weights[i];
 	}
 
@@ -112,6 +112,7 @@ int main (int argc, char* argv[])
 	CImg<unsigned char> src(files->filename);
 	int width = src.width();
 	int height = src.height();
+	int channels = src.spectrum();
 	
 	//Create initial black image
 	CImg<double> avg (width,height,1,3,0);
@@ -125,10 +126,20 @@ int main (int argc, char* argv[])
 		CImg<unsigned char> next(ptr->filename);
 
 		start_time = omp_get_wtime();
-		#pragma omp parallel for
-		cimg_forXYC(avg,x,y,c) {  // Do 3 nested loops
-	   		avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[count]); 
+
+		#pragma omp parallel for 
+		for (int x = 0; x < width; x++)
+		{
+        	for (int y = 0; y < height; y++)
+        	{
+    			for (int c = 0; c < channels; c++)
+    			{
+			   		avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[count]); 
+
+    			}
+			}
 		}
+
 		weighted_sum_time += (omp_get_wtime() - start_time);
 
 
