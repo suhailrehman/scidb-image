@@ -1,0 +1,24 @@
+Reading directory: /home/scidb/Downloads/thumbs100/
+File Count: 100
+Setting Thread Count to 1
+Using 1 thread(s) to compute average
+Weighted Sum Time: 0.005249 seconds
+Scalar Division Time: 0.000034 seconds
+Reading directory: /home/scidb/Downloads/thumbs100/
+File Count: 100
+Setting Thread Count to 2
+Using 2 thread(s) to compute average
+Weighted Sum Time: 0.006012 seconds
+Scalar Division Time: 0.000042 seconds
+Reading directory: /home/scidb/Downloads/thumbs100/
+File Count: 100
+Setting Thread Count to 4
+Using 4 thread(s) to compute average
+Weighted Sum Time: 0.016825 seconds
+Scalar Division Time: 0.000018 seconds
+Reading directory: /home/scidb/Downloads/thumbs100/
+File Count: 100
+Setting Thread Count to 8
+Using 8 thread(s) to compute average
+Weighted Sum Time: 0.154774 seconds
+Scalar Division Time: 0.000021 seconds

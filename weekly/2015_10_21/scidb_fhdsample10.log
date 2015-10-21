@@ -1,0 +1,47 @@
+Traceback (most recent call last):
+  File "image_load.py", line 43, in <module>
+    average[:,:,:,count] = io.imread(img_file)
+ValueError: could not broadcast input array from shape (768,1366,3) into shape (1080,1920,3)
+10 files in directory
+Query was executed successfully
+Query was executed successfully
+UserQueryException in file: src/query/parser/Translator.cpp function: createArrayReferenceParam line: 869
+Error id: scidb::SCIDB_SE_QPROC::SCIDB_LE_ARRAY_DOESNT_EXIST
+Error description: Query processor error. Array 'average_img' does not exist.
+SELECT * INTO temp_average FROM average_img JOIN weights ON average_img.i3 = weights.i0
+                               ^^^^^^^^^^^^
+
+real	0m0.015s
+user	0m0.008s
+sys	0m0.004s
+UserQueryException in file: src/query/parser/Translator.cpp function: createArrayReferenceParam line: 869
+Error id: scidb::SCIDB_SE_QPROC::SCIDB_LE_ARRAY_DOESNT_EXIST
+Error description: Query processor error. Array 'temp_average' does not exist.
+store(aggregate(apply(temp_average,weighted_image,f0*weight),sum(weighted_image),i0,i1,i2),average_image)
+                      ^^^^^^^^^^^^
+
+real	0m0.014s
+user	0m0.012s
+sys	0m0.000s
+UserQueryException in file: src/query/parser/Driver.cpp function: fail line: 148
+Error id: scidb::SCIDB_SE_PARSER::SCIDB_LE_QUERY_PARSING_ERROR
+Error description: Error during query parsing. Query parser failed with error 'syntax error'.
+store(project(apply(average_image,weighted_image_avg, weighted_image_sum / 10 files in directory ),weighted_image_avg),average_image2)
+                                                                             ^^^^^^
+
+real	0m0.014s
+user	0m0.008s
+sys	0m0.004s
+Traceback (most recent call last):
+  File "image_writeout.py", line 14, in <module>
+    average_img = sdb.wrap_array(sys.argv[1])
+  File "build/bdist.linux-x86_64/egg/scidbpy/interface.py", line 306, in wrap_array
+  File "build/bdist.linux-x86_64/egg/scidbpy/interface.py", line 272, in _show_array
+  File "build/bdist.linux-x86_64/egg/scidbpy/interface.py", line 1746, in _execute_query
+  File "build/bdist.linux-x86_64/egg/scidbpy/interface.py", line 1830, in _shim_execute_query
+  File "build/bdist.linux-x86_64/egg/scidbpy/interface.py", line 1792, in _shim_urlopen
+scidbpy.errors.SciDBQueryError: UserQueryException in file: src/query/parser/Translator.cpp function: matchOperatorParam line: 1216
+Error id: scidb::SCIDB_SE_SYNTAX::SCIDB_LE_ARRAY_DOESNT_EXIST
+Error description: Query syntax error. Array 'average_image2' does not exist.
+save(show(average_image2),'/tmp//shim_output_buf_GRLxwl',0,'csv')
+          ^^^^^^^^^^^^^^

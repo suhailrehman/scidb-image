@@ -1,0 +1,24 @@
+Reading directory: /home/scidb/Downloads/fhdsample10
+File Count: 10
+Setting Thread Count to 1
+Using 1 thread(s) to compute average
+Weighted Sum Time: 0.387217 seconds
+Scalar Division Time: 0.014153 seconds
+Reading directory: /home/scidb/Downloads/fhdsample10
+File Count: 10
+Setting Thread Count to 2
+Using 2 thread(s) to compute average
+Weighted Sum Time: 0.232948 seconds
+Scalar Division Time: 0.009635 seconds
+Reading directory: /home/scidb/Downloads/fhdsample10
+File Count: 10
+Setting Thread Count to 4
+Using 4 thread(s) to compute average
+Weighted Sum Time: 0.218983 seconds
+Scalar Division Time: 0.009711 seconds
+Reading directory: /home/scidb/Downloads/fhdsample10
+File Count: 10
+Setting Thread Count to 8
+Using 8 thread(s) to compute average
+Weighted Sum Time: 0.275874 seconds
+Scalar Division Time: 0.014305 seconds

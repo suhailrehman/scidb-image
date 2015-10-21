@@ -51,7 +51,7 @@ if "weights" in sdb.list_arrays():
     sdb.query("remove(weights)")
 
 sdb.query("CREATE ARRAY weights <weight:double>[i0=0:%s,10,0]"%count)
-sdb.query("store(build(weights,double(random()%10)),weights)");
+sdb.query("store(build(weights,random()%10,weights)");
 weights = sdb.wrap_array("weights")
 
 #Print out name of image

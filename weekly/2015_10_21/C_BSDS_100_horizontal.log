@@ -1,0 +1,24 @@
+Reading directory: /home/scidb/Downloads/BSDS/100-horizontal
+File Count: 100
+Setting Thread Count to 1
+Using 1 thread(s) to compute average
+Weighted Sum Time: 0.324024 seconds
+Scalar Division Time: 0.001237 seconds
+Reading directory: /home/scidb/Downloads/BSDS/100-horizontal
+File Count: 100
+Setting Thread Count to 2
+Using 2 thread(s) to compute average
+Weighted Sum Time: 0.185845 seconds
+Scalar Division Time: 0.000808 seconds
+Reading directory: /home/scidb/Downloads/BSDS/100-horizontal
+File Count: 100
+Setting Thread Count to 4
+Using 4 thread(s) to compute average
+Weighted Sum Time: 0.156449 seconds
+Scalar Division Time: 0.000385 seconds
+Reading directory: /home/scidb/Downloads/BSDS/100-horizontal
+File Count: 100
+Setting Thread Count to 8
+Using 8 thread(s) to compute average
+Weighted Sum Time: 0.191319 seconds
+Scalar Division Time: 0.000433 seconds

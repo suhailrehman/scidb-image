@@ -1,0 +1,20 @@
+2.0
+Query was executed successfully
+Query was executed successfully
+Query was executed successfully
+
+real	0m55.892s
+user	0m0.012s
+sys	0m0.000s
+UserException in file: src/array/Metadata.cpp function: checkConformity line: 785
+Error id: scidb::SCIDB_SE_INFER_SCHEMA::SCIDB_LE_INCORRECT_DIMENSION_BOUNDARY
+Error description: Error during schema inferring. Dimension boundaries must be between '0' and '63'.
+
+real	0m0.029s
+user	0m0.008s
+sys	0m0.004s
+Query was executed successfully
+
+real	0m0.153s
+user	0m0.012s
+sys	0m0.000s
