@@ -7,6 +7,16 @@ import numpy
 
 OUTPUT_FILE = 'output.jpg'
 
+
+'''
+SciDB Query:
+
+SELECT * INTO temp_average FROM average JOIN weights ON average.i3 = weights.i0;
+aggregate(apply(temp_average,weighted_image,f0*weight),sum(weighted_image),i0,i1,i2);
+
+'''
+
+
 #Helper function to get file paths of each image
 def absoluteFilePaths(directory):
    for dirpath,_,filenames in os.walk(directory):
@@ -40,16 +50,29 @@ for img_file in absoluteFilePaths(sys.argv[1]):
 #Write array of images to SciDB
 image_array_sdb = sdb.from_array(average, persistent=True)
 
+#create random weights
+if "weights" in sdb.list_arrays():
+    sdb.query("remove(weights)")
+
+sdb.query("CREATE ARRAY weights <weight:double>[i0=0:%s,10,0]"%count)
+sdb.query("store(build(weights,double(random()%10)/double(10)),weights)");
+weights = sdb.wrap_array("weights")
 
 #Print out name of image
 print "SciDB Array Name: "+image_array_sdb.name 
 
-# remove A if it already exists
 if "average_img" in sdb.list_arrays():
     sdb.query("remove(average_img)")
 
-# create an array named 'A' on the server
-sdb.query("store(aggregate(%s,avg(f0),i0,i1,i2),average_img)"%image_array_sdb.name)
+sdb.query("SELECT * INTO average_img FROM %s JOIN weights ON %s.i3 = weights.i0"%(image_array_sdb.name,image_array_sdb.name));#
+print image_array_sdb.dim_names
+#sdb.cross_join(image_array_sdb, weights)
+
+#sdb.merge(image_array_sdb, weights, left_on='f0', right_on='weight')
+#sdb.query("store(aggregate(%s,avg(f0),i0,i1,i2),average_img)"%image_array_sdb.name)
+print image_array_sdb.att_names
+sdb.query("store(aggregate(apply(%s,weighted_image,f0*weight),sum(weighted_image),i0,i1,i2),average_img)"%image_array_sdb.name)
+
 
 # create a Python object pointing to this array
 average_img = sdb.wrap_array("average_img")
