@@ -25,7 +25,8 @@ num_files = len(list(image_files))
 print str(num_files) + " files in directory"
 
 average = None
-weights = random.sample(xrange(1, 10), num_files)
+weights = [random.randint(1, 10) for x in xrange(num_files)]
+print "Weights: "+str(weights);
 
 #Load images into Target Array
 #for each file in the source directory
@@ -33,12 +34,12 @@ count = 0
 for img_file in absoluteFilePaths(sys.argv[1]):
   if count==0:
     image = io.imread(img_file)
+    print image.dtype
     average = numpy.empty(image.shape)
-    print average.dtype
-  average = average + (io.imread(img_file) * weights[count])
+  average = average + (io.imread(img_file).astype(numpy.float64) * weights[count])
   count=count+1
     
 average = average / sum(weights)
 
 
-io.imsave(OUTPUT_FILE, average)			
+io.imsave(OUTPUT_FILE, average.astype(numpy.uint8))			
