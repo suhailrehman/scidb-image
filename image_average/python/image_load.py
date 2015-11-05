@@ -36,11 +36,14 @@ average = None
 #for each file in the source directory
 count = 0
 for img_file in absoluteFilePaths(sys.argv[1]):
+	image = io.imread(img_file)
 	if count==0:
-		image = io.imread(img_file)
+		img_shape = image.shape
 		average = numpy.empty(tuple(list(image.shape) + [num_files]))
-	
-	average[:,:,:,count] = io.imread(img_file)
+	if(img_shape==image.shape):
+		average[:,:,:,count] = io.imread(img_file)
+	else:
+		print "!Bad image",img_file
 	count+=1
 
 #Write array of images to SciDB
@@ -51,7 +54,7 @@ if "weights" in sdb.list_arrays():
     sdb.query("remove(weights)")
 
 sdb.query("CREATE ARRAY weights <weight:double>[i0=0:%s,10,0]"%count)
-sdb.query("store(build(weights,random()%10,weights)");
+sdb.query("store(build(weights,random()%10),weights)");
 weights = sdb.wrap_array("weights")
 
 #Print out name of image

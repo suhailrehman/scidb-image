@@ -1,0 +1,12 @@
+Reading directory: /home/scidb/Downloads/fhdsample10
+File Count: 10
+Using 8 thread(s) to compute average
+Weighted Sum Time: 0.345082 seconds
+Scalar Division Time: 0.016210 seconds
+
+
+Reading directory: /home/scidb/Downloads/fhdsample10
+File Count: 10
+Using 8 thread(s) to compute average
+Weighted Sum Time: 0.091292 seconds
+Scalar Division Time: 0.033014 seconds

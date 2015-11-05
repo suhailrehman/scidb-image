@@ -128,17 +128,12 @@ int main (int argc, char* argv[])
 		start_time = omp_get_wtime();
 
 		#pragma omp parallel for 
-		for (int x = 0; x < width; x++)
+		cimg_forXYC(avg,x,y,c) 
 		{
-        	for (int y = 0; y < height; y++)
-        	{
-    			for (int c = 0; c < channels; c++)
-    			{
-			   		avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[count]); 
+	   		avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[count]); 
 
-    			}
-			}
 		}
+
 
 		weighted_sum_time += (omp_get_wtime() - start_time);
 
@@ -148,10 +143,13 @@ int main (int argc, char* argv[])
 	}
 
 	start_time = omp_get_wtime();
-	#pragma omp parallel for
-	cimg_forXYC(avg,x,y,c) {  // Do 3 nested loops
-	   		avg(x,y,c) = avg(x,y,c) / weight_sum; 
+	
+	#pragma omp parallel for 
+	cimg_forXYC(avg,x,y,c) 
+	{
+		avg(x,y,c) = avg(x,y,c) / weight_sum; 
 	}
+	
 	scalar_divide_time = (omp_get_wtime() - start_time);
 
 	printf("Weighted Sum Time: %.6f seconds\n",weighted_sum_time);
