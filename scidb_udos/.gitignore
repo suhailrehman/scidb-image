@@ -1,0 +1,3 @@
+#Ignore SciDB UDO objects
+*.o
+*.so
