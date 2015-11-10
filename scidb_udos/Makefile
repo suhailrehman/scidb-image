@@ -27,6 +27,7 @@
 
 #Example: make SCIDB_SOURCE_DIR=/home/user/workspace/scidb_trunk
 
+SCIDB_SOURCE_DIR=$$HOME/scidb/scidbtrunk/
 #The scidb-boost-devel package also needs to be installed:
 BOOST_LOCATION= /opt/scidb/15.7/3rdparty/boost/include/
 
@@ -38,20 +39,26 @@ all:
 	@if test ! -d "$(SCIDB_SOURCE_DIR)"; then echo  "Error. Try:\n\nmake SCIDB_SOURCE_DIR=<PATH TO SCIDB TRUNK>"; exit 1; fi 
 	$(CXX) $(CFLAGS) $(INC) -o plugin.cpp.o -c plugin.cpp
 
-	$(CXX) $(CFLAGS) $(INC) -o LogicalHelloInstances.cpp.o -c HelloInstances/LogicalHelloInstances.cpp
-	$(CXX) $(CFLAGS) $(INC) -o PhysicalHelloInstances.cpp.o -c HelloInstances/PhysicalHelloInstances.cpp
+	#$(CXX) $(CFLAGS) $(INC) -o LogicalHelloInstances.cpp.o -c HelloInstances/LogicalHelloInstances.cpp
+	#$(CXX) $(CFLAGS) $(INC) -o PhysicalHelloInstances.cpp.o -c HelloInstances/PhysicalHelloInstances.cpp
 
-	$(CXX) $(CFLAGS) $(INC) -o LogicalInstanceStats.cpp.o -c InstanceStats/LogicalInstanceStats.cpp
-	$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
+	#$(CXX) $(CFLAGS) $(INC) -o LogicalInstanceStats.cpp.o -c InstanceStats/LogicalInstanceStats.cpp
+	#$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
+
+
+	$(CXX) $(CFLAGS) $(INC) -o LogicalShift.cpp.o -c Shift/LogicalShift.cpp
+	#$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
 
 
 	$(CXX) $(CFLAGS) $(INC) -o libexample_udos.so \
 	                           plugin.cpp.o \
-	                           LogicalHelloInstances.cpp.o \
+	                           LogicalShift.cpp.o \
+	                           $(LIBS)
+
+     #                     LogicalHelloInstances.cpp.o \
 	                           PhysicalHelloInstances.cpp.o \
 	                           LogicalInstanceStats.cpp.o \
-	                           PhysicalInstanceStats.cpp.o \
-	                           $(LIBS)
+	                           PhysicalInstanceStats.cpp.o 	 
 
 clean:
 	rm -f *.o *.so
