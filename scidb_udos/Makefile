@@ -32,7 +32,7 @@ SCIDB_SOURCE_DIR=$$HOME/scidb/scidbtrunk/
 BOOST_LOCATION= /opt/scidb/15.7/3rdparty/boost/include/
 
 CFLAGS=-pedantic -W -Wextra -Wall -Wno-strict-aliasing -Wno-long-long -Wno-unused-parameter -fPIC -D__STDC_FORMAT_MACROS -Wno-system-headers -isystem -O2 -g -DNDEBUG -ggdb3  -D__STDC_LIMIT_MACROS -std=c++11
-INC=-I. -DPROJECT_ROOT="\"$(SCIDB_SOURCE_DIR)\"" -I"$(SCIDB_SOURCE_DIR)/include" -I"$(BOOST_LOCATION)"
+INC=-I. -DPROJECT_ROOT="\"$(SCIDB_SOURCE_DIR)\"" -I"$(SCIDB_SOURCE_DIR)/include" -I"$(BOOST_LOCATION)" -I"$(SCIDB_SOURCE_DIR)/src"
 LIBS=-L"$(SCIDB_SOURCE_DIR)/lib" -shared -Wl,-soname,libexample_udos.so -L. -lm
 
 all:
@@ -49,10 +49,17 @@ all:
 	$(CXX) $(CFLAGS) $(INC) -o LogicalShift.cpp.o -c Shift/LogicalShift.cpp
 	#$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
 
+	$(CXX) $(CFLAGS) $(INC) -o WindowArray.cpp.o -c KernelWindow/WindowArray.cpp
+	$(CXX) $(CFLAGS) $(INC) -o LogicalKernelWindow.cpp.o -c KernelWindow/LogicalKernelWindow.cpp
+	$(CXX) $(CFLAGS) $(INC) -o PhysicalKernelWindow.cpp.o -c KernelWindow/PhysicalKernelWindow.cpp
+	
 
 	$(CXX) $(CFLAGS) $(INC) -o libexample_udos.so \
 	                           plugin.cpp.o \
-	                           LogicalShift.cpp.o \
+	                           WindowArray.cpp.o  \
+	                           LogicalKernelWindow.cpp.o \
+	                           PhysicalKernelWindow.cpp.o \
+	                           
 	                           $(LIBS)
 
      #                     LogicalHelloInstances.cpp.o \

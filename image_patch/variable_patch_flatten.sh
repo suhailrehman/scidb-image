@@ -1,0 +1,2 @@
+iquery -aq "remove(average_patch)"
+time iquery -naq "store(aggregate(apply(cross_join(patch_volume, weights,patch_volume.i3,weights.i0),weighted_image,f0*weight),sum(weighted_image),i0,i1,i2),average_patch);"
