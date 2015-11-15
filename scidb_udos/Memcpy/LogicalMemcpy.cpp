@@ -107,7 +107,7 @@ public:
 		//TODO: Extend to multiple attributes in the future.
 		SCIDB_ASSERT(sourceAttrs.size() == 1);
 
-		//Construct ouput dimensions object and copy each dimension parameters individually:
+		//Construct output dimensions object and copy each dimension parameters individually:
 		Dimensions outputDims(sourceDims.size());
 		Attributes outputAttributes(sourceAttrs.size());
 
@@ -124,20 +124,15 @@ public:
 							   srcDim.getChunkOverlap()); //TODO: Verify the copy of dimensions is proper.
 		}
 
-		//Construct ouput attribute object and copy each dimension parameters individually:
+		//Construct output attribute object and copy each dimension parameters individually:
 		for(size_t i = 0, n = sourceAttrs.size(); i<n ; i++)
 		{
 			AttributeDesc const& sourceAttr = sourceAttrs[i];
-			outputAttributes[i] = AttributeDesc(sourceAttr.getId(),
+
+			outputAttributes[i] = AttributeDesc(i,
 									sourceAttr.getName(),
 									sourceAttr.getType(),
-									sourceAttr.getFlags(),
-									sourceAttr.getAliases(),
-									sourceAttr.getReserve(),
-									sourceAttr.getDefaultValue(),
-									sourceAttr.getDefaultValueExpr(),
-									sourceAttr.getVarSize()
-									); //TODO: Verify the copy of dimensions is proper.
+									0,0); //TODO: Verify the copy of dimensions is proper.
 		}
 
 
