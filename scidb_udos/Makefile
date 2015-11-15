@@ -31,8 +31,8 @@ SCIDB_SOURCE_DIR=$$HOME/scidb/scidbtrunk/
 #The scidb-boost-devel package also needs to be installed:
 BOOST_LOCATION= /opt/scidb/15.7/3rdparty/boost/include/
 
-CFLAGS=-pedantic -W -Wextra -Wall -Wno-strict-aliasing -Wno-long-long -Wno-unused-parameter -fPIC -D__STDC_FORMAT_MACROS -Wno-system-headers -isystem -O2 -g -DNDEBUG -ggdb3  -D__STDC_LIMIT_MACROS -std=c++11
-INC=-I. -DPROJECT_ROOT="\"$(SCIDB_SOURCE_DIR)\"" -I"$(SCIDB_SOURCE_DIR)/include" -I"$(BOOST_LOCATION)" -I"$(SCIDB_SOURCE_DIR)/src"
+CFLAGS=-pedantic -W -Wextra -Wall -Wno-strict-aliasing -Wno-long-long -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-variadic-macros -fPIC -D__STDC_FORMAT_MACROS -Wno-system-headers -isystem -O2 -g -DNDEBUG -ggdb3  -D__STDC_LIMIT_MACROS -std=c++11
+INC=-I. -DPROJECT_ROOT="\"$(SCIDB_SOURCE_DIR)\"" -I"$(SCIDB_SOURCE_DIR)/include" -I"$(BOOST_LOCATION)"
 LIBS=-L"$(SCIDB_SOURCE_DIR)/lib" -shared -Wl,-soname,libexample_udos.so -L. -lm
 
 all:
@@ -46,25 +46,34 @@ all:
 	#$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
 
 
-	$(CXX) $(CFLAGS) $(INC) -o LogicalShift.cpp.o -c Shift/LogicalShift.cpp
+	#Shift UDO Files
+	#$(CXX) $(CFLAGS) $(INC) -o LogicalShift.cpp.o -c Shift/LogicalShift.cpp
 	#$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
 
-	$(CXX) $(CFLAGS) $(INC) -o WindowArray.cpp.o -c KernelWindow/WindowArray.cpp
-	$(CXX) $(CFLAGS) $(INC) -o LogicalKernelWindow.cpp.o -c KernelWindow/LogicalKernelWindow.cpp
-	$(CXX) $(CFLAGS) $(INC) -o PhysicalKernelWindow.cpp.o -c KernelWindow/PhysicalKernelWindow.cpp
+	#Kernel Window UDO Files
+	#$(CXX) $(CFLAGS) $(INC) -o WindowArray.cpp.o -c KernelWindow/WindowArray.cpp
+	#$(CXX) $(CFLAGS) $(INC) -o LogicalKernelWindow.cpp.o -c KernelWindow/LogicalKernelWindow.cpp
+	#$(CXX) $(CFLAGS) $(INC) -o PhysicalKernelWindow.cpp.o -c KernelWindow/PhysicalKernelWindow.cpp
+	
+
+	#Memcpy UDO Files
+	$(CXX) $(CFLAGS) $(INC) -o LogicalMemcpy.cpp.o -c Memcpy/LogicalMemcpy.cpp
+	$(CXX) $(CFLAGS) $(INC) -o PhysicalMemcpy.cpp.o -c Memcpy/PhysicalMemcpy.cpp
 	
 
 	$(CXX) $(CFLAGS) $(INC) -o libexample_udos.so \
 	                           plugin.cpp.o \
-	                           WindowArray.cpp.o  \
-	                           LogicalKernelWindow.cpp.o \
-	                           PhysicalKernelWindow.cpp.o \
-	                           
+	                           LogicalMemcpy.cpp.o \
+	                           PhysicalMemcpy.cpp.o \
 	                           $(LIBS)
+				
 
      #                     LogicalHelloInstances.cpp.o \
 	                           PhysicalHelloInstances.cpp.o \
 	                           LogicalInstanceStats.cpp.o \
+	                           WindowArray.cpp.o  \
+	                           LogicalKernelWindow.cpp.o \
+	                           PhysicalKernelWindow.cpp.o \
 	                           PhysicalInstanceStats.cpp.o 	 
 
 clean:
