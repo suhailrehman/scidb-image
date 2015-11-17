@@ -34,6 +34,12 @@ using namespace std;
 namespace scidb
 {
 
+/*
+ * A static-linkage logger object we can use to write data to scidb.log.
+ * Lookup the log4cxx package for more information.
+ */
+static log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("scidb.toy_operators.memcpy"));
+
 /**
  * The primary responsibility of the PhysicalOperator is to return the proper array output as the result of the
  * execute() function.
@@ -55,6 +61,89 @@ public:
         PhysicalOperator(logicalName, physicalName, parameters, schema)
     {}
 
+private :
+
+
+    /**
+        * Read the input array (whatever part of it we have on the local instance) and populate an inputArrayInfo struct.
+        */
+       void printInputArrayInfo(std::shared_ptr<Array>& inputArray, InstanceID id)
+       {
+           std::shared_ptr<ConstArrayIterator> inputArrayIter = inputArray->getConstIterator(0);
+           ostringstream out;
+
+    	   while(!inputArrayIter->end())
+           {
+               ConstChunk const& inputChunk = inputArrayIter->getChunk();
+               Coordinate chunkCoord = inputArrayIter->getPosition()[0]; ///get the position of the chunk
+
+        	   out<<"Instance "<<id<<", Chunk: "<<chunkCoord<<"\n";
+
+
+               std::shared_ptr<ConstChunkIterator> inputChunkIter = inputChunk.getConstIterator();
+
+               while(!inputChunkIter->end())
+               {
+                   Value const& val = inputChunkIter->getItem();
+            	   out<<"Instance "<<id<<", Chunk: "<<chunkCoord<<" Position: "<<inputChunkIter.get()->getPosition()<<" Value: "<<val.getDouble()<<"\n";
+            	   //Dump Output
+            	   ++(*inputChunkIter);
+               }
+
+               ++(*inputArrayIter);
+           }
+
+		   LOG4CXX_DEBUG(logger, out.str());
+
+       }
+
+
+
+    /**
+     * Given the input array and an OutputArrayInfo, populate and return the local portion of the output array.
+
+    std::shared_ptr<Array> writeOutputArray(std::shared_ptr<Array>& inputArray, std::shared_ptr<Query>& query)
+    {
+
+        std::shared_ptr<Array> outputArray(new MemArray(_schema, query));
+        std::shared_ptr<ArrayIterator> outputArrayIter = outputArray->getIterator(0);
+
+
+        OutputArraySequentialWriter outputWriter(_schema, query);
+        for (std::shared_ptr<ConstArrayIterator> inputArrayIter = inputArray->getConstIterator(0);
+             !inputArrayIter->end();
+             ++(*inputArrayIter))  //for each chunk in input
+        {
+            ConstChunk const& inputChunk = inputArrayIter->getChunk();
+            Coordinate inputChunkPosition = inputArrayIter->getPosition()[0];
+            OutputArrayInfo::const_iterator iter = outputArrayInfo.find(inputChunkPosition); //find entry for this chunk
+            EXCEPTION_ASSERT(iter != outputArrayInfo.end());
+            if (iter->second.startingPosition < 0)
+            {   //we are told to skip the chunk
+                continue;
+            }
+            Coordinate currentOutputPos = iter->second.startingPosition; //write data to output starting at this pos
+            Value lastVal; //constructed as null
+            for(std::shared_ptr<ConstChunkIterator> inputChunkIter = inputChunk.getConstIterator();
+                !inputChunkIter->end();
+                ++(*inputChunkIter)) //for each value in the chunk
+            {
+                Value const& inputValue = inputChunkIter->getItem();
+                if(lastVal != inputValue) //new unique value or first value
+                {
+                    if(iter->second.writeFirstValue || !lastVal.isNull())
+                    {
+                        outputWriter.writeValue(currentOutputPos, inputValue, query);
+                        ++currentOutputPos;
+                    }
+                    lastVal = inputValue;
+                }
+            }
+        }
+        return outputWriter.finalize();
+    }
+ */
+
     /**
      * Execute the operator and return the output array. The input arrays (with actual data) are provided as an
      * argument. Non-array arguments to the operator are set in the _parameters member variable. This particular
@@ -72,70 +161,15 @@ public:
          * - check if the query was cancelled.. and so on
          */
         InstanceID instanceId = query->getInstanceID();
-        ostringstream outputString;
-        outputString<<"Hello, World! This is instance "<<instanceId;
 
-        /* Construct the output array. A MemArray is a general materialized array that can be read and written to.
-         * Despite the name, the MemArray is actually backed by a LRU cache and chunks that are not currently open for
-         * reading and writing are saved to disk, should the array size exceed the MEM_ARRAY_THRESHOLD setting. _schema
-         * came from LogicalHelloInstances::inferSchema() and was shipped to all instanced by scidb.
-         */
+
         std::shared_ptr<Array> outputArray(new MemArray(_schema, query));
-        /* return outputArray; -- at this point this would return an empty array */
 
-        /* In order to write data to outputArray, we create an ArrayIterator. The argument given is the attribute ID.
-         * The ArrayIterator allows one to read existing chunks and add new chunks to the array.
-         */
-        std::shared_ptr<ArrayIterator> outputArrayIter = outputArray->getIterator(0);
-
-        /* We are adding one chunk in the one-dimensional space. All chunks have a position, which is also the position
-         * of the top-left element in the chunk. In this simple example, each chunk contains only once cell and this is
-         * where the cell shall be written to.
-         */
-        Coordinates position(1, instanceId);
-
-        /* Create the chunk and open a ChunkIterator to it. */
-        std::shared_ptr<ChunkIterator> outputChunkIter = outputArrayIter->newChunk(position).getIterator(query, 0);
-
-        /* Set the position inside the chunk */
-        outputChunkIter->setPosition(position);
-
-        /* The Value is a generic variable-size container for one attribute at one particular position. It also contains
-         * a null-code (if the value is NULL) and information about the binary size of the data.
-         */
-        Value value;
-
-        /* Copy the output string into the value.*/
-        value.setString(outputString.str().c_str());
-
-        /* Write the value into the chunk. */
-        outputChunkIter->writeItem(value);
-
-        /* Finish writing the chunk. After this call, outputChunkIter is invalidated. */
-        outputChunkIter->flush();
+        //Print Out Array Info
+        printInputArrayInfo(inputArrays[0],instanceId);
 
         return outputArray;
 
-        /* But what about the empty tag? Note that it is created implicitly, as a convenience, based on the flags we've
-         * passed to the chunk.getIterator() call.
-         * Interesting flags to chunk.getIterator include:
-         * ChunkIterator::NO_EMPTY_CHECK - means do not create the empty tag implicitly. It then has to be written
-         *    explicitly or via a different chunk. It is useful for writing multiple attributes.
-         * ChunkIterator::SEQUENTIAL_WRITE - means the chunk shall be written in row-major order as opposed to
-         *    random-access order. In this case, a faster write path is used. Row-major order means the last dimension
-         *    is incremented first, up until the end of the chunk, after which the second-to last dimension is
-         *    incremented by one and the last dimension starts back the beginning of the chunk - and so on.
-         * ChunkIterator::APPEND_CHUNK - means append new data to the existing data already in the chunk; do not
-         *    overwrite
-         */
-
-        /* Also note that this instance returns one chunk of the array. The entire array contains one chunk per
-         * instance. If this is the root operator in the query, SciDB will automatically assemble all the chunks
-         * from different instances to return to the front end. Otherwise, the next operator in the query will be
-         * called on just the portion of the data returned on the local instance.
-         *
-         * Read operators uniq and index_lookup for advanced data distribution topics.
-         */
     }
 };
 

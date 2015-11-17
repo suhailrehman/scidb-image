@@ -21,35 +21,26 @@
 */
 
 /**
- * @file LogicalHelloInstances.cpp
+ * @file LogicalMemcpy.cpp
  * A sample UDO that outputs an array containing a "Hello, World" string from every instance.
  * This is the most basic UDO designed to provide a starting example and an introduction to some SciDB internals.
  * As-is, the operator is barely useful.
  *
- * @brief The operator: hello_instances().
+ * @brief The operator: memcpy().
  *
  * @par Synopsis:
- *   <br> hello_instances()
+ *   <br> memcpy(source_array)
  *
  * @par Summary:
  *   <br>
- *   Produces a result array with one cell for each running SciDB instance, and a single string "hello world"
- *   attribute.
+ *   Produces a result array that is a copy of the source_array
  *   <br>
- *   To add some usefulness, the operator may be extended to return some basic CPU, disk and RAM usage information
- *   from every instance, and then used for system monitoring purporses.
  *
- * @par Input: none
+ * @par Input: source_array of n-dimensions and exactly one attribute.
  *
- * @par Output array:
- *   <br> <
- *   <br>   instance_status:string
- *   <br> >
- *   <br> [
- *   <br>   instance_no = 0:*,1 0]
- *   <br> ]
+ * @par Output array: Bytewise copy of source_array
  *
- * @author apoliakov@paradigm4.com
+ * @author suhailr@andrew.cmu.edu
  */
 
 #include <query/Operator.h>
@@ -78,7 +69,10 @@ public:
      */
     LogicalMemcpy(const string& logicalName, const string& alias):
         LogicalOperator(logicalName, alias)
-    {}
+    {
+    	/* Tell SciDB we accept one input array. All input arrays must be listed first. */
+		ADD_PARAM_INPUT()
+    }
 
     /**
      * Determine the schema of the output. inferSchema is called on the coordinator instance during query planning and

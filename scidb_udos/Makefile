@@ -42,8 +42,8 @@ all:
 	#$(CXX) $(CFLAGS) $(INC) -o LogicalHelloInstances.cpp.o -c HelloInstances/LogicalHelloInstances.cpp
 	#$(CXX) $(CFLAGS) $(INC) -o PhysicalHelloInstances.cpp.o -c HelloInstances/PhysicalHelloInstances.cpp
 
-	#$(CXX) $(CFLAGS) $(INC) -o LogicalInstanceStats.cpp.o -c InstanceStats/LogicalInstanceStats.cpp
-	#$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
+	$(CXX) $(CFLAGS) $(INC) -o LogicalInstanceStats.cpp.o -c InstanceStats/LogicalInstanceStats.cpp
+	$(CXX) $(CFLAGS) $(INC) -o PhysicalInstanceStats.cpp.o -c InstanceStats/PhysicalInstanceStats.cpp
 
 
 	#Shift UDO Files
@@ -65,6 +65,8 @@ all:
 	                           plugin.cpp.o \
 	                           LogicalMemcpy.cpp.o \
 	                           PhysicalMemcpy.cpp.o \
+	                           LogicalInstanceStats.cpp.o \
+	                           PhysicalInstanceStats.cpp.o \
 	                           $(LIBS)
 				
 
