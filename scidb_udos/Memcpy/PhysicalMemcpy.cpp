@@ -64,8 +64,8 @@ public:
 private :
 
 
-    /**
-        * Read the input array (whatever part of it we have on the local instance) and populate an inputArrayInfo struct.
+    	/**
+        * Read the input array (whatever part of it we have on the local instance) and log the input data to the default logger
         */
        void printInputArrayInfo(std::shared_ptr<Array>& inputArray, InstanceID id)
        {
@@ -101,6 +101,7 @@ private :
 
     /**
      * Given the input array and an OutputArrayInfo, populate and return the local portion of the output array.
+	 */
 
     std::shared_ptr<Array> writeOutputArray(std::shared_ptr<Array>& inputArray, std::shared_ptr<Query>& query)
     {
@@ -108,41 +109,47 @@ private :
         std::shared_ptr<Array> outputArray(new MemArray(_schema, query));
         std::shared_ptr<ArrayIterator> outputArrayIter = outputArray->getIterator(0);
 
+        ostringstream out;
 
-        OutputArraySequentialWriter outputWriter(_schema, query);
-        for (std::shared_ptr<ConstArrayIterator> inputArrayIter = inputArray->getConstIterator(0);
-             !inputArrayIter->end();
-             ++(*inputArrayIter))  //for each chunk in input
-        {
-            ConstChunk const& inputChunk = inputArrayIter->getChunk();
-            Coordinate inputChunkPosition = inputArrayIter->getPosition()[0];
-            OutputArrayInfo::const_iterator iter = outputArrayInfo.find(inputChunkPosition); //find entry for this chunk
-            EXCEPTION_ASSERT(iter != outputArrayInfo.end());
-            if (iter->second.startingPosition < 0)
-            {   //we are told to skip the chunk
-                continue;
-            }
-            Coordinate currentOutputPos = iter->second.startingPosition; //write data to output starting at this pos
-            Value lastVal; //constructed as null
-            for(std::shared_ptr<ConstChunkIterator> inputChunkIter = inputChunk.getConstIterator();
-                !inputChunkIter->end();
-                ++(*inputChunkIter)) //for each value in the chunk
-            {
-                Value const& inputValue = inputChunkIter->getItem();
-                if(lastVal != inputValue) //new unique value or first value
-                {
-                    if(iter->second.writeFirstValue || !lastVal.isNull())
-                    {
-                        outputWriter.writeValue(currentOutputPos, inputValue, query);
-                        ++currentOutputPos;
-                    }
-                    lastVal = inputValue;
-                }
-            }
-        }
-        return outputWriter.finalize();
+
+        std::shared_ptr<ConstArrayIterator> inputArrayIter = inputArray->getConstIterator(0);
+
+		while(!inputArrayIter->end())
+		{
+			ConstChunk const& inputChunk = inputArrayIter->getChunk();
+			Coordinates const& chunkCoord = inputArrayIter->getPosition(); ///get the position of the chunk
+
+			std::shared_ptr<ConstChunkIterator> inputChunkIter = inputChunk.getConstIterator();
+			std::shared_ptr<ChunkIterator> outputChunkIter = outputArrayIter->newChunk(chunkCoord).getIterator(query,
+                    ChunkIterator::SEQUENTIAL_WRITE);
+
+			out.clear();
+			out<<", Chunk: "<<chunkCoord<<"\n";
+			LOG4CXX_DEBUG(logger, out.str());
+
+
+			//TODO: Access checks on output chunk iterator:
+			while(!inputChunkIter->end())
+			{
+				Value const& val = inputChunkIter->getItem();
+
+				out.clear();
+				out<<"Chunk: "<<chunkCoord<<" Position: "<<inputChunkIter.get()->getPosition()<<" Value: "<<val.getDouble()<<"\n";
+				LOG4CXX_DEBUG(logger, out.str());
+
+	            outputChunkIter->setPosition(inputChunkIter.get()->getPosition());
+	            outputChunkIter->writeItem(val);
+
+	            ++(*inputChunkIter);
+			}
+
+			outputChunkIter->flush();
+			++(*inputArrayIter);
+		}
+
+		return outputArray;
     }
- */
+
 
     /**
      * Execute the operator and return the output array. The input arrays (with actual data) are provided as an
@@ -167,6 +174,7 @@ private :
 
         //Print Out Array Info
         printInputArrayInfo(inputArrays[0],instanceId);
+        outputArray = writeOutputArray(inputArrays[0],query);
 
         return outputArray;
 
