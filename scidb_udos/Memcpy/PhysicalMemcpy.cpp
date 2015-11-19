@@ -108,9 +108,9 @@ private :
 
         std::shared_ptr<Array> outputArray(new MemArray(_schema, query));
         std::shared_ptr<ArrayIterator> outputArrayIter = outputArray->getIterator(0);
+        bool debug=false;
 
-        ostringstream out;
-
+       	ostringstream out;
 
         std::shared_ptr<ConstArrayIterator> inputArrayIter = inputArray->getConstIterator(0);
 
@@ -125,7 +125,7 @@ private :
 
 			out.clear();
 			out<<", Chunk: "<<chunkCoord<<"\n";
-			LOG4CXX_DEBUG(logger, out.str());
+			LOG4CXX_TRACE(logger, out.str());
 
 
 			//TODO: Access checks on output chunk iterator:
@@ -135,7 +135,7 @@ private :
 
 				out.clear();
 				out<<"Chunk: "<<chunkCoord<<" Position: "<<inputChunkIter.get()->getPosition()<<" Value: "<<val.getDouble()<<"\n";
-				LOG4CXX_DEBUG(logger, out.str());
+				LOG4CXX_TRACE(logger, out.str());
 
 	            outputChunkIter->setPosition(inputChunkIter.get()->getPosition());
 	            outputChunkIter->writeItem(val);
