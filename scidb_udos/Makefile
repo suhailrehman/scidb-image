@@ -1,4 +1,4 @@
-##
+#
 # BEGIN_COPYRIGHT
 #
 # Copyright (C) 2008-2015 SciDB, Inc.
@@ -27,11 +27,11 @@
 
 #Example: make SCIDB_SOURCE_DIR=/home/user/workspace/scidb_trunk
 
-SCIDB_SOURCE_DIR=$$HOME/scidb/scidbtrunk/
+SCIDB_SOURCE_DIR=$$HOME/scidbtrunk/
 #The scidb-boost-devel package also needs to be installed:
 BOOST_LOCATION= /opt/scidb/15.7/3rdparty/boost/include/
 
-CFLAGS=-pedantic -W -Wextra -Wall -Wno-strict-aliasing -Wno-long-long -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-variadic-macros -fPIC -D__STDC_FORMAT_MACROS -Wno-system-headers -isystem -O2 -g -DNDEBUG -ggdb3  -D__STDC_LIMIT_MACROS -std=c++11
+CFLAGS=-pedantic -W -Wextra -Wall -Wno-strict-aliasing -Wno-long-long -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-variadic-macros -fPIC -D__STDC_FORMAT_MACROS -Wno-system-headers -isystem -O2 -g -DNDEBUG -ggdb3  -D__STDC_LIMIT_MACROS -std=c++0x
 INC=-I. -DPROJECT_ROOT="\"$(SCIDB_SOURCE_DIR)\"" -I"$(SCIDB_SOURCE_DIR)/include" -I"$(BOOST_LOCATION)"
 LIBS=-L"$(SCIDB_SOURCE_DIR)/lib" -shared -Wl,-soname,libexample_udos.so -L. -lm
 
@@ -55,6 +55,11 @@ all:
 	#$(CXX) $(CFLAGS) $(INC) -o LogicalKernelWindow.cpp.o -c KernelWindow/LogicalKernelWindow.cpp
 	#$(CXX) $(CFLAGS) $(INC) -o PhysicalKernelWindow.cpp.o -c KernelWindow/PhysicalKernelWindow.cpp
 	
+	#KNN UDO Files
+	$(CC) $(CFLAGS) $(INC) -c -o rowsort.o knn/rowsort.c
+	$(CC) $(CFLAGS) $(INC) -c -o merge.o knn/merge.c
+	$(CXX) $(CCFLAGS) $(INC) -o Logicalknn.o -c knn/Logicalknn.cpp
+	$(CXX) $(CCFLAGS) $(INC) -o Physicalknn.o -c knn/Physicalknn.cpp
 
 	#Memcpy UDO Files
 	$(CXX) $(CFLAGS) $(INC) -o LogicalMemcpy.cpp.o -c Memcpy/LogicalMemcpy.cpp
@@ -67,6 +72,10 @@ all:
 	                           PhysicalMemcpy.cpp.o \
 	                           LogicalInstanceStats.cpp.o \
 	                           PhysicalInstanceStats.cpp.o \
+				   merge.o\
+  				   rowsort.o\
+				   Logicalknn.o\
+				   Physicalknn.o\
 	                           $(LIBS)
 				
 
