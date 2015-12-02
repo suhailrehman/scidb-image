@@ -108,7 +108,6 @@ private :
 
         std::shared_ptr<Array> outputArray(new MemArray(_schema, query));
         std::shared_ptr<ArrayIterator> outputArrayIter = outputArray->getIterator(0);
-        bool debug=false;
 
        	ostringstream out;
 
