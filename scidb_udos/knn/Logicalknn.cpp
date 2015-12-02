@@ -29,6 +29,9 @@
  */
 
 #include "query/Operator.h"
+
+using namespace std;
+
 namespace scidb
 {
 
@@ -80,7 +83,7 @@ public:
             throw SYSTEM_EXCEPTION(SCIDB_SE_INTERNAL, SCIDB_LE_ILLEGAL_OPERATION) << "knn does not accept column partitioning of the input matrix, use repart first";
         Attributes outputAttributes(matrix.getAttributes());
         Dimensions outputDimensions(matrix.getDimensions());
-        return ArrayDesc(matrix.getName(), outputAttributes, outputDimensions);
+        return ArrayDesc(matrix.getName(), outputAttributes, outputDimensions, defaultPartitioning());
     }
 };
 

@@ -28,6 +28,8 @@
 #include "query/Operator.h"
 #include "rowsort.h"
 
+using namespace std;
+
 namespace scidb
 {
 
@@ -40,22 +42,6 @@ public:
                 ArrayDesc const& schema):
         PhysicalOperator(logicalName, physicalName, parameters, schema)
     {}
-
-    virtual ArrayDistribution getOutputDistribution(vector<ArrayDistribution> const& inputDistributions,
-                                                    vector<ArrayDesc> const& inputSchemas) const
-    {
-       return inputDistributions[0];
-    }
-
-    /**
-      * [Optimizer API] Determine if operator changes result chunk distribution.
-      * @param sourceSchemas shapes of all arrays that will given as inputs.
-      * @return true if will changes output chunk distribution, false if otherwise
-      */
-    virtual bool changesDistribution(std::vector<ArrayDesc> const& sourceSchemas) const
-    {
-        return false;
-    }
 
     /* The instance-parallel 'main' routine of this operator.
        This runs on each instance in the SciDB cluster.
@@ -88,8 +74,7 @@ public:
             }
 // Compute neighbor orders for each row in this block
             double *ans = (double *)malloc(chunkdata.size() * sizeof(double));
-            if(!ans) throw SYSTEM_EXCEPTION(SCIDB_SE_OPERATOR, SCIDB_LE_ILLEGAL_OPERATION)
-                        << "memory allocation error";
+            if(!ans) throw SYSTEM_EXCEPTION(SCIDB_SE_OPERATOR, SCIDB_LE_ILLEGAL_OPERATION) << "memory allocation error";
             rowsort(ans, chunkdata.data(), chunkdata.size(), last_row-start[0]+1);
 // write the output (has same schema as input)
             shared_ptr<ChunkIterator> outputChunkIter = outputArrayIterator->newChunk(start).getIterator(query, ChunkIterator::SEQUENTIAL_WRITE);

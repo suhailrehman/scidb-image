@@ -25,7 +25,7 @@ CFLAGS = -pedantic -W -Wextra -Wall -Wno-variadic-macros -Wno-strict-aliasing \
          -Wno-long-long -Wno-unused-parameter -fPIC -D_STDC_FORMAT_MACROS \
          -Wno-system-headers -isystem  $(OPTIMIZED) -D_STDC_LIMIT_MACROS -std=c99
 CCFLAGS = -pedantic -W -Wextra -Wall -Wno-variadic-macros -Wno-strict-aliasing \
-         -Wno-long-long -Wno-unused-parameter -fPIC $(OPTIMIZED) -std=c++0x
+         -Wno-long-long -Wno-unused-parameter -fPIC $(OPTIMIZED) -std=c++11
 INC = -I. -DPROJECT_ROOT="\"$(SCIDB)\"" -I"$(SCIDB_3RDPARTY)/boost/include/" \
       -I"$(SCIDB)/include" -I./extern
 
