@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from skimage import io
 from scidbpy import connect
 
