@@ -27,7 +27,7 @@
 
 #Example: make SCIDB_SOURCE_DIR=/home/user/workspace/scidb_trunk
 
-SCIDB_SOURCE_DIR=$$HOME/scidb/scidbtrunk/
+SCIDB_SOURCE_DIR=$$HOME/scidbtrunk/
 #The scidb-boost-devel package also needs to be installed:
 BOOST_LOCATION= /opt/scidb/15.7/3rdparty/boost/include/
 CFLAGS = -pedantic -W -Wextra -Wall -Wno-variadic-macros -Wno-strict-aliasing \

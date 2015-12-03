@@ -79,7 +79,7 @@ public:
            throw SYSTEM_EXCEPTION(SCIDB_SE_INTERNAL, SCIDB_LE_ILLEGAL_OPERATION) <<  "knn requires a single double precision-valued attribute";
         if(matrix.getDimensions().size() !=2 )
            throw SYSTEM_EXCEPTION(SCIDB_SE_INTERNAL, SCIDB_LE_ILLEGAL_OPERATION) <<  "knn requires a matrix input";
-        if (matrix.getDimensions()[1].getChunkInterval() != static_cast<int64_t>(matrix.getDimensions()[1].getLength()))
+        if (matrix.getDimensions()[1].getChunkInterval() < static_cast<int64_t>(matrix.getDimensions()[1].getLength()))
             throw SYSTEM_EXCEPTION(SCIDB_SE_INTERNAL, SCIDB_LE_ILLEGAL_OPERATION) << "knn does not accept column partitioning of the input matrix, use repart first";
         Attributes outputAttributes(matrix.getAttributes());
         Dimensions outputDimensions(matrix.getDimensions());
