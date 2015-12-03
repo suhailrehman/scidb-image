@@ -54,6 +54,13 @@ For every img in voulme:
 	store(aggregate(apply(patch_volume_temp,weighted_patch,f0*weight),sum(weighted_patch),i0,i1,i2),average_patch);
 
 
+
+Once patch is constructed:
+
+store(aggregate(apply(cross_join(patch_volume, weights,patch_volume.i3,weights.i0),weighted_image,f0*weight),sum(weighted_image),i0,i1,i2),average_patch);"
+
+
+
 Convolution
 ===========
 
