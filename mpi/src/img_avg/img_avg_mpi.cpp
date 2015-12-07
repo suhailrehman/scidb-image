@@ -33,7 +33,13 @@ int main (int argc, char* argv[])
 	int num_processors = MPI::COMM_WORLD.Get_size();
 	int processor_id = MPI::COMM_WORLD.Get_rank();
 
+	//Initialize timing variables:
+	double start_time, setup_time, mapping_time, scatter_time, reduce_time, output_time;
+
 	printf("Reading directory: %s\n",argv[1]);
+
+	start_time = mpi_sync_time();
+
 	std::vector<std::string> files = read_files(argv[1]);
 
 	if(argc==3) //If thread count is specified
@@ -78,6 +84,8 @@ int main (int argc, char* argv[])
 	MPI::COMM_WORLD.Bcast(&height, sizeof(int),MPI::INT,master);
 	MPI::COMM_WORLD.Bcast(&channels, sizeof(int),MPI::INT,master);
 
+	setup_time = mpi_elapsed_time(start_time);
+
 	/* Debuging that the weights are properly distributed here:
 	for (int i = 0; i < files.size(); i++)
 	{
@@ -88,6 +96,9 @@ int main (int argc, char* argv[])
 	/*Every process get its own canvas to store the image processing
 	 *partial result
 	 */
+
+	start_time = mpi_sync_time();
+
 	CImg<double> avg (width,height,1,channels,false);
 
 	//Walk through file vector in strided fashion to perform image processing
@@ -108,6 +119,10 @@ int main (int argc, char* argv[])
 
 	//MPI Barrier to Ensure every processor is done.
 	MPI::COMM_WORLD.Barrier();
+
+	mapping_time = mpi_elapsed_time(start_time);
+
+	start_time = mpi_sync_time();
 
 	//MPI Requires pre-defined struct sizes and information so that it
 	//can handle the struct buffer info - I'm going to send the pixel buffer as
@@ -132,10 +147,14 @@ int main (int argc, char* argv[])
 	    master,
 		MPI::COMM_WORLD);
 
+	scatter_time = mpi_elapsed_time(start_time);
+
+	start_time = mpi_sync_time();
 
 	//Produce final Image
 	if(processor_id == master)
 	{
+
 		CImg <double> final_image(width,height,1,channels,false);
 
 		for(int i = 0; i < num_processors; i += 1)
@@ -165,6 +184,16 @@ int main (int argc, char* argv[])
 
 		//TODO: Custom Output image save
 		final_image.save("output.jpg");
+
+	}
+
+	reduce_time = mpi_elapsed_time(start_time);
+
+	if(processor_id == master)
+	{
+		printf("Time: Setup,Mapping,Scatter,Reduce\n");
+		printf("Time: %.2f,%.2f,%.2f,%.2f\n "
+						,setup_time,mapping_time,scatter_time,reduce_time);
 	}
 
 	MPI::Finalize();

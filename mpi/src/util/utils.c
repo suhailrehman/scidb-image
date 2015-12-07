@@ -12,6 +12,8 @@
 #include <cstdlib>
 #include <dirent.h>
 #include <string.h>
+#include "mpi.h"
+
 
 
 /*
@@ -66,4 +68,16 @@ void *rand_image_weights(int n, int seed, float &sum, float *weights)
 	}
 
 
+}
+
+double mpi_sync_time()
+{
+	MPI_Barrier(MPI_COMM_WORLD);
+	return MPI_Wtime();
+}
+
+double mpi_elapsed_time(double start_time)
+{
+	MPI_Barrier(MPI_COMM_WORLD);
+	return MPI_Wtime() - start_time;
 }
