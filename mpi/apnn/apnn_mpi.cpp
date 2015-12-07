@@ -1,5 +1,5 @@
 /*
- * img_avg_mpi.c
+ * apnn_mpi.c
  *
  *  Created on: Dec 3, 2015
  *      Author: suhailr
@@ -14,13 +14,62 @@
 #include <omp.h>
 #include "mpi.h"
 #include <cstdlib>
-#include "../util/CImg.h"
+#include "CImg.h"
 
-#include "../util/utils.h"
+#include "util/utils.h"
 
 
 using namespace cimg_library;
+std::vector<std::string> read_files(char *directory)
+{
+ 	DIR *dir;
+    struct dirent *dp;
 
+
+	std::vector<std::string> file_list;
+
+    dir = opendir(directory);
+    std::string directory_string(directory);
+
+    while ((dp=readdir(dir)) != NULL) {
+
+        //printf("debug: %s\n", dp->d_name);
+
+        if ( !strcmp(dp->d_name, ".") || !strcmp(dp->d_name, "..") || dp->d_type == DT_DIR) //Skip subdirectories
+        {
+            // do nothing
+        }
+        else
+        {
+        	std::string file_name(dp->d_name);
+            std::string full_path =  directory_string + "/" + file_name;
+            file_list.push_back(full_path);
+        }
+    }
+
+    closedir(dir);
+    return file_list;
+}
+
+/*
+*	Generate random image weight array of floats [0,1]
+*	of length n, using a random seed
+*/
+void *rand_image_weights(int n, int seed, float &sum, float *weights)
+{
+	srand(seed);
+
+	sum=0;
+
+	for(int i=0;i<n;i++)
+	{
+		weights[i]= rand() % 10;
+		//printf("Weight of Image %d is %.2f\n",i, weights[i]);
+		sum+=weights[i];
+	}
+
+
+}
 
 int main (int argc, char* argv[])
 {
@@ -170,4 +219,72 @@ int main (int argc, char* argv[])
 	MPI::Finalize();
 
 }
+
+
+
+	/*
+
+	printf("Using %d thread(s) to compute average\n", omp_get_max_threads());
+
+
+	//Generate random list of weights;
+	float weight_sum;
+	float *weights = rand_image_weights(filecount,time(NULL),weight_sum);
+
+	//Load first image to get dimensions -
+	//TODO: replace with canvas properties for the future
+	CImg<unsigned char> src(files->filename);
+	int width = src.width();
+	int height = src.height();
+	int channels = src.spectrum();
+
+	//Create initial black image
+	CImg<double> avg (width,height,1,3,0);
+
+	int count = 0;
+	double start_time, weighted_sum_time=0, scalar_divide_time=0;
+	//TODO: Loop over all images in directory
+	while(ptr!=NULL)
+	{
+		//Load next image
+		CImg<unsigned char> next(ptr->filename);
+
+		start_time = omp_get_wtime();
+
+		#pragma omp parallel for
+		cimg_forXYC(avg,x,y,c)
+		{
+	   		avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[count]);
+
+		}
+
+
+		weighted_sum_time += (omp_get_wtime() - start_time);
+
+
+ 		ptr=ptr->next;
+		count++;
+	}
+
+	start_time = omp_get_wtime();
+
+	#pragma omp parallel for
+	cimg_forXYC(avg,x,y,c)
+	{
+		avg(x,y,c) = avg(x,y,c) / weight_sum;
+	}
+
+	scalar_divide_time = (omp_get_wtime() - start_time);
+
+	printf("Weighted Sum Time: %.6f seconds\n",weighted_sum_time);
+	printf("Scalar Division Time: %.6f seconds\n",scalar_divide_time);
+
+	//TODO: Custom Output image save
+	avg.save("output.jpg");
+
+	*/
+
+
+
+
 

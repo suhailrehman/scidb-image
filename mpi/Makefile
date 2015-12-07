@@ -4,12 +4,17 @@ MPICPP = mpic++.mpich
 MPIRUN = mpirun.mpich
 
 NP = -np 2
+TEST_DIR = /home/suhailr/Downloads/1080p
+
 
 mpitest:
-	$(MPICC) $(CFLAGS) -o mpitest mpi_test.c
+	$(MPICC) $(CFLAGS) -o mpitest test/mpi_test.c
+	
+imgavg:
+	$(MPICPP) $(CFLAGS) -o img_avg_mpi util/utils.c img_avg/img_avg_mpi.cpp 
 
-runtest: mpitest
-	$(MPIRUN) $(NP) ./mpitest
+runtest: imgavg
+	$(MPIRUN) $(NP) ./img_avg_mpi $(TEST_DIR)
 
 all: runtest
 
