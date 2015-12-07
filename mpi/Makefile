@@ -8,15 +8,15 @@ TEST_DIR = /home/suhailr/Downloads/1080p
 
 
 mpitest:
-	$(MPICC) $(CFLAGS) -o mpitest test/mpi_test.c
+	$(MPICC) $(CFLAGS) -o bin/mpitest src/test/mpi_test.c
 	
 imgavg:
-	$(MPICPP) $(CFLAGS) -o img_avg_mpi util/utils.c img_avg/img_avg_mpi.cpp 
+	$(MPICPP) $(CFLAGS) -o bin/img_avg_mpi src/util/utils.c src/img_avg/img_avg_mpi.cpp 
 
 runtest: imgavg
-	$(MPIRUN) $(NP) ./img_avg_mpi $(TEST_DIR)
+	$(MPIRUN) $(NP) bin/img_avg_mpi $(TEST_DIR)
 
-all: runtest
+all: mpitest runtest
 
 clean:
 	rm -f mpitest
