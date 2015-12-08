@@ -1,7 +1,7 @@
 CFLAGS = -O3 -L/usr/X11R6/lib -lm -lpthread -lX11 -lXext -fopenmp 
 MPICC = mpicc.mpich2
-MPICPP = mpic++.mpich
-MPIRUN = mpirun.mpich
+MPICPP = mpic++.mpich2
+MPIRUN = mpirun.mpich2
 
 NP = -np 2
 TEST_DIR = /home/suhailr/Downloads/1080p
