@@ -12,6 +12,7 @@
 
 std::vector<std::string> read_files(char *directory);
 void *rand_image_weights(int n, int seed, float &sum, float *weights);
+int rowsort(double *ans, double *data, size_t size, size_t nrows);
 
 //Timing Functions
 double mpi_sync_time();

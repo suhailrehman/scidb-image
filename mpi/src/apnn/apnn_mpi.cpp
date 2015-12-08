@@ -12,12 +12,14 @@
 #include <string>
 #include <vector>
 #include <omp.h>
+#include <math.h>
 #include "mpi.h"
 #include <cstdlib>
 #include "../util/CImg.h"
 
 #include "../util/utils.h"
 
+double compute_ssd(const char *imagefile1 ,const char* imagefile2);
 
 using namespace cimg_library;
 
@@ -31,11 +33,10 @@ using namespace cimg_library;
 			else
 				distance[i][j] = compute_ssd(image1,image2);
 
-	MPI_Barrier;
+	compute_knn(rank_matrix,distance);
 
-	MPI_Gather(distance,,MPI::Double,distance,,)
+	MPI_Gather(distance_matrix,,MPI::Double,distance,,)
 
-	compute_knn(distance);
 
 */
 
@@ -98,6 +99,11 @@ int main (int argc, char* argv[])
 	printf("Process: %d, LOW: %d, HIGH: %d\n",processor_id,BLOCK_LOW(processor_id,num_processors,files.size()), BLOCK_HIGH(processor_id,num_processors,files.size()));
 	 */
 
+	//Create a matrix of sum-squared distances of each image
+	double *ssdmatrix =
+			(double*) malloc(files.size()*files.size()*sizeof(double*));
+
+
 	//Walk through file vector in block fashion for each process
 	for (int i = BLOCK_LOW(processor_id,num_processors,files.size());
 			i <= BLOCK_HIGH(processor_id,num_processors,files.size());
@@ -105,74 +111,119 @@ int main (int argc, char* argv[])
 	{
 		printf("Processor %d assigned File: %s\n"
 				,processor_id,files[i].c_str());
-	}
-/*
-	//MPI Barrier to Ensure every processor is done.
-	MPI::COMM_WORLD.Barrier();
 
-	//MPI Requires pre-defined struct sizes and information so that it
-	//can handle the struct buffer info - I'm going to send the pixel buffer as
-	//a <T> array instead.
-	double *image_buffer=NULL;
-
-	if(processor_id == master)
-	{
-		image_buffer=(double*)malloc(sizeof(double)*avg.size()*num_processors);
-	}
-
-	void *image_to_send = avg.data();
-
-	//Master Process Collect Partial Results from everyone
-
-	MPI_Gather(image_to_send,
-		avg.size(),
-	    MPI::DOUBLE,
-	    image_buffer,
-		avg.size(),
-	    MPI::DOUBLE,
-	    master,
-		MPI::COMM_WORLD);
-
-
-	//Produce final Image
-	if(processor_id == master)
-	{
-		CImg <double> final_image(width,height,1,channels,false);
-
-		for(int i = 0; i < num_processors; i += 1)
+		for(int j=0;j<files.size();j++)
 		{
-			CImg <double>average_image_n(image_buffer+(i*avg.size()),width,height,1,channels,false);
-			//printf("Inside Loop %d\n",i);
-
-			//DEBUG: Custom Output image save
-			//char filename[10];
-			//sprintf(&filename,"image-%d.jpg",i);
-			//average_image_n.save(filename);
-
-			//Update local average image
-			cimg_forXYC(final_image,x,y,c)
+			if(i==j) ssdmatrix[i* files.size() + j] = 0;
+			else
 			{
-				final_image(x,y,c) = final_image(x,y,c) + average_image_n(x,y,c);
+				ssdmatrix[i* files.size() + j]
+						  = compute_ssd(files[i].c_str(),files[j].c_str());
 			}
 
 		}
+	}
 
-		//Divide by weighted sum
-		//TODO: Replace with normalized weights
-		cimg_forXYC(final_image,x,y,c)
-		{
-			final_image(x,y,c) = final_image(x,y,c) / weight_sum;
+
+	//Create a matrix of sum-squared distances of each image
+	double *rankmatrix	=
+			(double*) malloc(files.size()*files.size()*sizeof(double*));
+
+	/* SSD Matrix computed, now rank the values */
+	int start_value = BLOCK_LOW(processor_id,num_processors,files.size());
+
+	double * block_ssd_buffer = ssdmatrix + (start_value * files.size());
+	double * rank_matrix_buffer = rankmatrix + (start_value *files.size());
+
+
+	//DEBUG:
+	//printf("start_value: %d\n",start_value);
+	//printf("size: %d\n",BLOCK_SIZE(processor_id,num_processors,files.size())*files.size());
+	//printf("num_rows: %d\n",BLOCK_SIZE(processor_id,num_processors,files.size()));
+
+	int retval = rowsort(rank_matrix_buffer,
+			block_ssd_buffer,
+			BLOCK_SIZE(processor_id,num_processors,files.size())*files.size(),
+			BLOCK_SIZE(processor_id,num_processors,files.size())
+			);
+
+	if(retval!=0) printf("Error computing partial weights\n");
+
+	int *counts, *displacements;
+
+	if(processor_id == master){
+		counts=(int*)malloc(num_processors*sizeof(int));
+		displacements=(int*)malloc(num_processors*sizeof(int));
+
+		for(int i=0;i<num_processors;i++){
+			displacements[i] =
+					BLOCK_LOW(i,num_processors,files.size())*files.size();
+
+			counts[i] = BLOCK_SIZE(i,num_processors,files.size())*files.size();
 		}
 
-		//TODO: Custom Output image save
-		final_image.save("output.jpg");
+
 	}
-*/
+
+	//Collect Rank Matrix Results:
+	MPI_Gatherv(rank_matrix_buffer,
+			BLOCK_SIZE(processor_id,num_processors,files.size())*files.size(),
+			MPI::DOUBLE,
+			rankmatrix,
+			counts,
+			displacements,
+			MPI::DOUBLE,
+			master,
+			MPI::COMM_WORLD);
+
+
+	/* Print Rank matrix */
+	if(processor_id == master)
+	{
+		for(int i=0;i<files.size();i++)
+		{
+			for(int j=0;j<files.size();j++)
+			{
+				printf("%.1f ",rankmatrix[i*files.size()+j]);
+			}
+
+			printf("\n");
+		}
+	}
+
+
 	MPI::Finalize();
 
 }
 
 
+/* Given image file names 1 and 2, open, iterate through the
+ * pixel buffers and return the sum of squared distances of each pixel value
+ */
+double compute_ssd(const char *imagefile1 ,const char* imagefile2)
+{
+
+	double sum = 0.0;
+
+	CImg<unsigned char> image1(imagefile1);
+	CImg<unsigned char> image2(imagefile2);
+
+	if(image1.width() != image2.width() ||
+		image1.height()  != image2.height()  ||
+		image1.spectrum() != image1.spectrum() ||
+		image1.depth() != image1.depth())
+	{
+		return sum;
+	}
+
+	cimg_forXYC(image1,x,y,c)
+	{
+		sum += pow(image1(x,y,c) - image2(x,y,c),2);
+	}
+
+
+	return sum;
+}
 
 
 
