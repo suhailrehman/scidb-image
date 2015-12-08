@@ -50,7 +50,7 @@ int main (int argc, char* argv[])
 	int num_processors = MPI::COMM_WORLD.Get_size();
 	int processor_id = MPI::COMM_WORLD.Get_rank();
 
-	printf("Reading directory: %s\n",argv[1]);
+	//printf("Reading directory: %s\n",argv[1]);
 	std::vector<std::string> files = read_files(argv[1]);
 
 	if(argc==3) //If thread count is specified
@@ -88,27 +88,25 @@ int main (int argc, char* argv[])
 	MPI::COMM_WORLD.Bcast(&channels, sizeof(int),MPI::INT,master);
 
 
-	/*Every process get its own canvas to store the image processing
+	/*Every process gets its own canvas to store the image processing
 	 *partial result
 	 */
 	CImg<double> avg (width,height,1,channels,false);
 
-	//Walk through file vector in strided fashion to perform image processing
-	for (int i = processor_id; i < files.size(); i += num_processors)
+	/*
+	 * Debug
+	printf("Process: %d, LOW: %d, HIGH: %d\n",processor_id,BLOCK_LOW(processor_id,num_processors,files.size()), BLOCK_HIGH(processor_id,num_processors,files.size()));
+	 */
+
+	//Walk through file vector in block fashion for each process
+	for (int i = BLOCK_LOW(processor_id,num_processors,files.size());
+			i <= BLOCK_HIGH(processor_id,num_processors,files.size());
+			i ++)
 	{
 		printf("Processor %d assigned File: %s\n"
 				,processor_id,files[i].c_str());
-
-		CImg<unsigned char> next(files[i].c_str());
-
-		//Update local average image
-		cimg_forXYC(avg,x,y,c)
-		{
-			avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[i]);
-		}
-
 	}
-
+/*
 	//MPI Barrier to Ensure every processor is done.
 	MPI::COMM_WORLD.Barrier();
 
@@ -169,7 +167,7 @@ int main (int argc, char* argv[])
 		//TODO: Custom Output image save
 		final_image.save("output.jpg");
 	}
-
+*/
 	MPI::Finalize();
 
 }

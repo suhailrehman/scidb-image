@@ -1,10 +1,10 @@
 CFLAGS = -O3 -L/usr/X11R6/lib -lm -lpthread -lX11 -lXext -fopenmp 
 MPICC = mpicc.mpich2
-MPICPP = mpic++.mpich
-MPIRUN = mpirun.mpich
+MPICPP = mpic++.mpich2
+MPIRUN = mpirun.mpich2
 
 NP = -np 2
-TEST_DIR = /home/suhailr/Downloads/1080p
+TEST_DIR = /media/sf_Google_Drive/1
 
 
 mpitest:
@@ -12,11 +12,17 @@ mpitest:
 	
 imgavg:
 	$(MPICPP) $(CFLAGS) -o bin/img_avg_mpi src/util/utils.c src/img_avg/img_avg_mpi.cpp 
+	
+apnnmpi:
+	$(MPICPP) $(CFLAGS) -o bin/apnn_mpi src/util/utils.c src/apnn/apnn_mpi.cpp
 
-runtest: imgavg
+runimgavg: imgavg
 	$(MPIRUN) $(NP) bin/img_avg_mpi $(TEST_DIR)
 
-all: mpitest runtest
+runapnn: apnnmpi
+	$(MPIRUN) $(NP) bin/apnn_mpi $(TEST_DIR)
+
+all: runapnn #mpitest runtest
 
 clean:
 	rm -f mpitest
