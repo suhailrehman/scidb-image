@@ -5,6 +5,7 @@ MPIRUN = mpirun.mpich2
 
 NP = -np 2
 TEST_DIR = /home/suhailr/Downloads/1080p
+NTHREADS = 2
 
 
 mpitest:
@@ -17,12 +18,12 @@ apnnmpi:
 	$(MPICPP) $(CFLAGS) -o bin/apnn_mpi src/util/utils.c src/apnn/apnn_mpi.cpp
 
 runimgavg: imgavg
-	$(MPIRUN) $(NP) bin/img_avg_mpi $(TEST_DIR)
+	$(MPIRUN) $(NP) bin/img_avg_mpi $(TEST_DIR) $(NTHREADS)
 
 runapnn: apnnmpi
 	$(MPIRUN) $(NP) bin/apnn_mpi $(TEST_DIR)
 
-all: runapnn #mpitest runtest
+all: runimgavg #mpitest runtest
 
 clean:
 	rm -f mpitest

@@ -110,6 +110,7 @@ int main (int argc, char* argv[])
 		CImg<unsigned char> next(files[i].c_str());
 
 		//Update local average image
+		#pragma omp parallel for
 		cimg_forXYC(avg,x,y,c)
 		{
 			avg(x,y,c) = avg(x,y,c) + (next(x,y,c) * weights[i]);
@@ -168,6 +169,7 @@ int main (int argc, char* argv[])
 			//average_image_n.save(filename);
 
 			//Update local average image
+			#pragma omp parallel for
 			cimg_forXYC(final_image,x,y,c)
 			{
 				final_image(x,y,c) = final_image(x,y,c) + average_image_n(x,y,c);
@@ -177,6 +179,8 @@ int main (int argc, char* argv[])
 
 		//Divide by weighted sum
 		//TODO: Replace with normalized weights
+
+		#pragma omp parallel for
 		cimg_forXYC(final_image,x,y,c)
 		{
 			final_image(x,y,c) = final_image(x,y,c) / weight_sum;
