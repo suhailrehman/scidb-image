@@ -125,6 +125,12 @@ int main (int argc, char* argv[])
 		//Load next image
 		CImg<unsigned char> next(ptr->filename);
 
+		if(next.width() != width || next.height() != height || next.spectrum() != channels || next.depth() !=src.depth())
+		{
+			printf("Bad File: %s\n", ptr->filename);
+			ptr=ptr->next;
+			continue;
+		}
 		start_time = omp_get_wtime();
 
 		#pragma omp parallel for 
