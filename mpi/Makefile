@@ -4,7 +4,7 @@ MPICPP = mpic++.mpich2
 MPIRUN = mpirun.mpich2
 
 NP = -np 2
-TEST_DIR = /media/sf_Google_Drive/1
+TEST_DIR = /home/suhailr/Downloads/1080p
 
 
 mpitest:
