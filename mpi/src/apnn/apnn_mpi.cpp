@@ -184,7 +184,7 @@ int main (int argc, char* argv[])
 		{
 			for(int j=0;j<files.size();j++)
 			{
-				printf("%.1f ",rankmatrix[i*files.size()+j]);
+				printf("%.0f ",rankmatrix[i*files.size()+j]);
 			}
 
 			printf("\n");
