@@ -104,9 +104,11 @@ int main (int argc, char* argv[])
 	//Walk through file vector in strided fashion to perform image processing
 	for (int i = processor_id; i < files.size(); i += num_processors)
 	{
+		/*
 		printf("Processor %d assigned File: %s\n"
 				,processor_id,files[i].c_str());
-
+		*/
+		printf("Processing File %d\r",i);
 		CImg<unsigned char> next(files[i].c_str());
 
 		//Update local average image
@@ -117,6 +119,8 @@ int main (int argc, char* argv[])
 		}
 
 	}
+
+	printf("\n");
 
 	//MPI Barrier to Ensure every processor is done.
 	MPI::COMM_WORLD.Barrier();
