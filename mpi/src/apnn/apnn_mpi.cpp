@@ -26,7 +26,7 @@ using namespace cimg_library;
 
 /*
  *
- * SSD Computation:
+ * APNN Computation:
 	for each assigned image image[i]:
 		for each image in dataset image[j]:
 			if(i==j) distance[i][j] = 0;
@@ -213,7 +213,7 @@ double compute_ssd(const char *imagefile1 ,const char* imagefile2)
 		image1.spectrum() != image1.spectrum() ||
 		image1.depth() != image1.depth())
 	{
-		return sum;
+		return sum; //Return 0 if the images are of different dimensions
 	}
 
 	cimg_forXYC(image1,x,y,c)

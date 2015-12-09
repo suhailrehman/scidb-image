@@ -230,12 +230,6 @@ rowsort(double *ans, double *data, size_t size, size_t nrows)
   memcpy(ans, data, size*sizeof(double));
   for(j=0;j<nrows;++j)
   {
-	/*
-	for(int m=0; m<dim;m++)
-	{
-		printf("data[%d][%d] = %.2f\n",j,m,data[j*dim + m]);
-	}*/
-
     k = mergesort (&ans[j*dim], dim, i);
     if(k<0) break; // An error!
 // Return just the order results
