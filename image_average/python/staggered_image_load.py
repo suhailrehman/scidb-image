@@ -38,9 +38,9 @@ for img_file in absoluteFilePaths(sys.argv[1]):
 		image_volume = sdb.wrap_array("image_volume")
 	if(img_shape==image.shape):
 		if "single_image" in sdb.list_arrays():
-    		sdb.query("remove(single_image)")
-		sdb.from_array(image, persistent=False, name="single_image")
-		sdb.query("insert(redimension(apply(%s, i3, %s), image_volume), image_volume)" %(single_image,count));
+    			sdb.query("remove(single_image)")
+		sdb.from_array(image.astype('float64'),persistent=False, name="single_image")
+		sdb.query("insert(redimension(apply(single_image, i3, %s), image_volume), image_volume)" %count);
 	else:
 		print "!Bad image: ",img_file
 	count+=1
