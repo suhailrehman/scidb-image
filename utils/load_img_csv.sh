@@ -14,6 +14,7 @@ mkfifo $TMPDIR/fifo
 iquery -aq "remove($ARRAY)" 2>/dev/null
 iquery -aq "remove($FLATARRAY)" 2>/dev/null
 iquery -aq "create array $FLAT_ARRAY $FLAT_SCHEMA"
+iquery -aq "create array $ARRAY $SCHEMA"
 
 img2csv $INPUT_DIR > $TMPDIR/fifo &
 iquery -naq "load($ARRAY, '"$TMPDIR/fifo"', -2, 'csv')"

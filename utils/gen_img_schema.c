@@ -80,7 +80,7 @@ int main (int argc, char* argv[])
 	int channels = src.spectrum();
 	
 	
-	printf("image_volume<f0:double>[i0=0:%d,5000,0,i1=0:%d,5000,0,i2=0:%d,1000,0,i3=0:%d,1,0]\n",width-1,height-1,channels-1,filecount-1);
+	printf("<f0:double>[i0=0:%d,5000,0,i1=0:%d,5000,0,i2=0:%d,1000,0,i3=0:%d,1,0]\n",width-1,height-1,channels-1,filecount-1);
 
 	
 }
