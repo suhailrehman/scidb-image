@@ -48,6 +48,8 @@ int main (int argc, char* argv[])
 	//Initialize timing variables:
 	double start_time, setup_time, mapping_time, scatter_time, reduce_time, output_time;
 
+	start_time = mpi_sync_time();
+
 	//printf("Reading directory: %s\n",argv[1]);
 	std::vector<std::string> files = read_files(argv[1]);
 
@@ -59,7 +61,11 @@ int main (int argc, char* argv[])
 	}
 	*/
 
+
+	setup_time = mpi_elapsed_time(start_time);
+
 	start_time = mpi_sync_time();
+
 
 	//Walk through file vector in block fashion for each process
 	for (int i = BLOCK_LOW(processor_id,num_processors,files.size());
@@ -78,6 +84,14 @@ int main (int argc, char* argv[])
 
 
 	mapping_time = mpi_elapsed_time(start_time);
+
+	if(processor_id == master)
+		{
+			printf("Time: Setup,Mapping\n");
+			printf("Time: %.2f,%.2f\n "
+							,setup_time,mapping_time);
+		}
+
 
 	MPI::Finalize();
 
