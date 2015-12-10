@@ -51,13 +51,7 @@ int main (int argc, char* argv[])
 	//printf("Reading directory: %s\n",argv[1]);
 	std::vector<std::string> files = read_files(argv[1]);
 
-	if(argc==3) //If thread count is specified
-	{
-		printf("Setting Thread Count to %d\n",atoi(argv[2]));
-		omp_set_num_threads(atoi(argv[2]));
-	}
-
-	char *outputdir = argv[3];
+	char *outputdir = argv[2];
 	/* Debuging vector access here
 	for (int i = 0; i < files.size(); i++)
 	{
@@ -134,9 +128,15 @@ int compute_convolution(const char *imagefile1, const char *outputdirectory)
 	char *filename = (char*) malloc(512*sizeof(char));
 	strcpy(filename, imagefile1);
 	filename = basename(filename);
+
+
+
 	char outputpath[512];
 	strcpy(outputpath,outputdirectory);
+
 	strcat(outputpath,filename);
+
+	printf("Writing output file %s\n",outputpath);
 
 	output.save(outputpath);
 

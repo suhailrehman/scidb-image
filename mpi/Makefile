@@ -29,7 +29,7 @@ convolution:
 	$(MPICPP) $(CFLAGS) -o bin/convolution_mpi src/util/utils.c src/convolution/convolution_mpi.cpp
 	
 runconvolution: convolution
-	$(MPIRUN) $(NP) bin/apnn_mpi $(TEST_DIR)
+	$(MPIRUN) $(NP) bin/convolution_mpi $(TEST_DIR) ~/Downloads/testoutput/
 
 patchavg:
 	$(MPICPP) $(CFLAGS) -o bin/patch_avg_mpi src/util/utils.c src/patch_avg/patch_avg_mpi.cpp
@@ -38,7 +38,7 @@ runpatch: patchavg
 	$(MPIRUN) $(NP) bin/patch_avg_mpi $(TEST_DIR)
 
 	
-all: runpatch #mpitest runtest
+all: runconvolution #mpitest runtest
 
 clean:
 	rm -f bin/*
