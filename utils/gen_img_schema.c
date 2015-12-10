@@ -101,7 +101,7 @@ int main (int argc, char* argv[])
 
 	}
 	
-	printf("<f0:double>[i0=0:%d,5000,0,i1=0:%d,5000,0,i2=0:%d,1000,0,i3=0:%d,1,0]\n",width-1,height-1,channels-1,count-1);
+	printf("<f0:double null>[i0=0:%d,5000,0,i1=0:%d,5000,0,i2=0:%d,1000,0,i3=0:%d,1,0]\n",width-1,height-1,channels-1,count-1);
 
 	
 }

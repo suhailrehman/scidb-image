@@ -40,12 +40,21 @@ weights = weights / weight_sum #Normalize array weights.
 print weights.sum()[0]
 weights = sdb.wrap_array("weights") 
 '''
-# Generate and normalize weights using numpy:
-weights = [random.randint(1, 10) for x in xrange(num_files)]
-weight_sum = sum(weights)
-weights = [float(weight) / weight_sum for weight in weights]
-weight_array = sdb.from_array(weights, persistent=True, name="weights")
-weight_array.attribute_rename("f0","weight")
-print weight_array.query
-weight_array.eval()
+sdb.query("CREATE ARRAY weights <weight:double>[i0=0:%s,10,0]"%str(num_files-1))
+sdb.query("store(build(weights,random()%10),weights)");
+weights = sdb.wrap_array("weights")
+weight_sum = weights.sum()[0]
+weights = weights / weight_sum #Normalize array weights.
+weights.attribute_rename("x","weight")
+print weights.query
+weights.eval()
+print "Weighted Array: ",weights.name
+weights = sdb.wrap_array(weights.name)
+
+sdb.query("remove(weights)")
+sdb.query("store(cast(%s, <weight:double> [i0=0:%s,1000,0]),weights)"%(weights.name,str(num_files-1)));
+
+
+
+
 

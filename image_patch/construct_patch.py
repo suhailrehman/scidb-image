@@ -23,7 +23,7 @@ num_images = image_volume.shape[-1]
 if "patch_volume" in sdb.list_arrays():
     sdb.query("remove(patch_volume)")
 
-sdb.query("CREATE ARRAY patch_volume<f0:double>[i0=0:%s,1000,0,i1=0:%s,1000,0,i2=0:2,1000,0,i3=0:%s,1000,0]"%(patch_height-1,patch_width-1,num_images));
+sdb.query("CREATE ARRAY patch_volume<f0:double null>[i0=0:%s,1000,0,i1=0:%s,1000,0,i2=0:2,1000,0,i3=0:%s,1000,0]"%(patch_height-1,patch_width-1,num_images));
 patch_volume = sdb.wrap_array("patch_volume")
 
 for image_num in range(num_images):

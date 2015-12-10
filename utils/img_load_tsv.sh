@@ -11,13 +11,28 @@ trap "rm -rf $TMPDIR" 15 3 2 1 0
 
 mkfifo $TMPDIR/fifo
 
-iquery -aq "remove($ARRAY)" 2>/dev/null
-iquery -aq "remove($FLAT_ARRAY)" 2>/dev/null
-#iquery -aq "create array $FLAT_ARRAY $FLAT_SCHEMA"
+#iquery -aq "remove($ARRAY)" 2>/dev/null
+#iquery -aq "remove($FLAT_ARRAY)" 2>/dev/null
+iquery -aq "create array $FLAT_ARRAY $FLAT_SCHEMA"
 iquery -aq "create array $ARRAY $SCHEMA"
+#iquery -aq "load_library('prototype_load_tools')"
 
-./imgs2csv $INPUT_DIR > $TMPDIR/fifo &
-iquery -naq "store(parse(split('"$TMPDIR/fifo"'),'num_attributes=5'),image_volume_flat))"
+./imgs2tsv $INPUT_DIR > $TMPDIR/fifo &
+iquery -naq "
+ insert(
+ redimension(
+      apply(
+        parse(
+          split('"$TMPDIR/fifo"'),
+          'num_attributes=5'),
+        i0, dcast(a0,int64(null)),
+        i1, dcast(a1,int64(null)),
+        i2, dcast(a2,int64(null)),
+        i3, dcast(a3,int64(null)),
+        f0, dcast(a4,double(null))),
+    $ARRAY),$ARRAY)"
+
 wait
+echo "Array Ready"
 
-iquery -naq "store(redimension(image_volume_flat,image_volume),image_volume)"
+#iquery -naq "store(redimension(image_volume_flat,image_volume),image_volume)"

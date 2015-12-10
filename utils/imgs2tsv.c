@@ -80,7 +80,7 @@ int main (int argc, char* argv[])
 	int channels = src.spectrum();
 	
 	int count = 0;
-	printf("i0\ti1\ti2\ti3\tf0\n"); 
+	//printf("i0\ti1\ti2\ti3\tf0\n"); 
 
 	//TODO: Loop over all images in directory
 	while(ptr!=NULL)
