@@ -168,11 +168,11 @@ int main (int argc, char* argv[])
 	if(processor_id == master)
 	{
 
-		CImg <double> final_image(width,height,1,channels,false);
+		CImg <double> final_image(patch_width,patch_height,1,channels,false);
 
 		for(int i = 0; i < num_processors; i += 1)
 		{
-			CImg <double>average_image_n(image_buffer+(i*patch.size()),width,height,1,channels,false);
+			CImg <double>average_image_n(image_buffer+(i*patch.size()),patch_width,patch_height,1,channels,false);
 			//printf("Inside Loop %d\n",i);
 
 			//DEBUG: Custom Output image save
