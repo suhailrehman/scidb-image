@@ -5,6 +5,7 @@ MPIRUN = mpirun.mpich2
 
 NP = -np 2
 TEST_DIR = /media/sf_Google_Drive/1/
+PATCH_TEST = ~/Downloads/1080p/
 NTHREADS = 2
 
 
@@ -23,7 +24,21 @@ runimgavg: imgavg
 runapnn: apnnmpi
 	$(MPIRUN) $(NP) bin/apnn_mpi $(TEST_DIR)
 
-all: runapnn #mpitest runtest
+
+convolution:
+	$(MPICPP) $(CFLAGS) -o bin/convolution_mpi src/util/utils.c src/convolution/convolution_mpi.cpp
+	
+runconvolution: convolution
+	$(MPIRUN) $(NP) bin/apnn_mpi $(TEST_DIR)
+
+patchavg:
+	$(MPICPP) $(CFLAGS) -o bin/patch_avg_mpi src/util/utils.c src/patch_avg/patch_avg_mpi.cpp
+
+runpatch: patchavg
+	$(MPIRUN) $(NP) bin/patch_avg_mpi $(TEST_DIR)
+
+	
+all: runpatch #mpitest runtest
 
 clean:
-	rm -f mpitest
+	rm -f bin/*
