@@ -19,3 +19,5 @@ iquery -aq "create array $ARRAY $SCHEMA"
 ./imgs2csv $INPUT_DIR > $TMPDIR/fifo &
 iquery -naq "load($FLAT_ARRAY, '"$TMPDIR/fifo"', -2, 'csv')"
 wait
+
+iquery -naq "store(redimension(image_volume_flat,image_volume),image_volume)"

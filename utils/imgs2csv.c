@@ -99,7 +99,7 @@ int main (int argc, char* argv[])
 		#pragma omp parallel for 
 		cimg_forXYC(next,x,y,c) 
 		{
-	   		printf("%d,%d,%d,%d\n",x,y,c,count,next(x,y,c)); 
+	   		printf("%d,%d,%d,%d,%d\n",x,y,c,count,next(x,y,c)); 
 
 		}
 
