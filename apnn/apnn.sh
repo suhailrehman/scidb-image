@@ -6,19 +6,19 @@
 MAX_RANK=5
 
 #Check Command Line Agruments
-if [ $# -eq 0 ]
-  then
-    echo "Please specify a directory containing input arguments"
-    exit 1
-fi
+#if [ $# -eq 0 ]
+#  then
+#    echo "Please specify a directory containing input arguments"
+#    exit 1
+#fi
 
 #Clear SciDB
-python ../image_average/python/clear_scidb.py
+#python ../image_average/python/clear_scidb.py
 
 echo "Using Dataset: $1"
 
 #Load images from first command-line argument
-./image_load.py $1
+#./image_load.py $1
 
 #Assuming Volume of Images are already in SciDB under the name of image_volume
 #Cross-Product of all images in the volume.
