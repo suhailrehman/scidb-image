@@ -51,6 +51,9 @@ int main (int argc, char* argv[])
 	int num_processors = MPI::COMM_WORLD.Get_size();
 	int processor_id = MPI::COMM_WORLD.Get_rank();
 
+	//Initialize timing variables:
+	double start_time, setup_time, mapping_time, scatter_time, reduce_time, output_time;
+
 	//printf("Reading directory: %s\n",argv[1]);
 	std::vector<std::string> files = read_files(argv[1]);
 
@@ -66,6 +69,8 @@ int main (int argc, char* argv[])
 		printf("File Name: %s\n", files[i].c_str());
 	}
 	*/
+
+	start_time = mpi_sync_time();
 
 
 	//Image Canvas Properties
@@ -87,6 +92,11 @@ int main (int argc, char* argv[])
 	MPI::COMM_WORLD.Bcast(&width, sizeof(int),MPI::INT,master);
 	MPI::COMM_WORLD.Bcast(&height, sizeof(int),MPI::INT,master);
 	MPI::COMM_WORLD.Bcast(&channels, sizeof(int),MPI::INT,master);
+
+	setup_time = mpi_elapsed_time(start_time);
+
+
+	start_time = mpi_sync_time();
 
 
 	/*Every process gets its own canvas to store the image processing
@@ -149,6 +159,13 @@ int main (int argc, char* argv[])
 
 	if(retval!=0) printf("Error computing partial weights\n");
 
+	mapping_time = mpi_elapsed_time(start_time);
+
+
+	start_time = mpi_sync_time();
+
+
+
 	int *counts, *displacements;
 
 	if(processor_id == master){
@@ -191,7 +208,11 @@ int main (int argc, char* argv[])
 			MPI::COMM_WORLD);
 	}
 
-	/* Print Rank matrix */
+	scatter_time = mpi_elapsed_time(start_time);
+
+
+
+	/* Print Rank matrix
 	if(processor_id == master)
 	{
 		for(int i=0;i<files.size();i++)
@@ -204,6 +225,17 @@ int main (int argc, char* argv[])
 			printf("\n");
 		}
 	}
+	*/
+
+	if(processor_id == master)
+	{
+		printf("Time: Setup,Mapping,Scatter\n");
+		printf("Time: %.2f,%.2f,%.2f\n "
+						,setup_time,mapping_time,scatter_time);
+	}
+
+
+	printf("Complete\n");
 
 
 	MPI::Finalize();
