@@ -166,7 +166,9 @@ int main (int argc, char* argv[])
 	}
 
 	//Collect Rank Matrix Results:
-	MPI_Gatherv(rank_matrix_buffer,
+	if(processor_id == master)
+	{
+		MPI_Gatherv(MPI_IN_PLACE,
 			BLOCK_SIZE(processor_id,num_processors,files.size())*files.size(),
 			MPI::DOUBLE,
 			rankmatrix,
@@ -175,7 +177,19 @@ int main (int argc, char* argv[])
 			MPI::DOUBLE,
 			master,
 			MPI::COMM_WORLD);
-
+	}
+	else
+	{
+		MPI_Gatherv(rank_matrix_buffer,
+			BLOCK_SIZE(processor_id,num_processors,files.size())*files.size(),
+			MPI::DOUBLE,
+			rankmatrix,
+			counts,
+			displacements,
+			MPI::DOUBLE,
+			master,
+			MPI::COMM_WORLD);
+	}
 
 	/* Print Rank matrix */
 	if(processor_id == master)

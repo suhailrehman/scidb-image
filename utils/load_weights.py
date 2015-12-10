@@ -49,5 +49,3 @@ weight_array.attribute_rename("f0","weight")
 print weight_array.query
 weight_array.eval()
 
-#Print out name of image
-print "SciDB Array Name: "+image_array_sdb.name 
