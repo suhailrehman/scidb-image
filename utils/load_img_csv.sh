@@ -3,7 +3,7 @@ ARRAY="image_volume"
 FLAT_ARRAY="image_volume_flat"
 INPUT_DIR=$1
 SCHEMA=$(./gen_img_schema $INPUT_DIR 2> /dev/null)
-FLAT_SCHEMA="<f0:double>[i0=0:*,2000000,0]"
+FLAT_SCHEMA="<i0: int64, i1: int64, i2: int64, i3: int64, f0:double>[i=0:*,2000000,0]"
 
 TMPDIR=$(mktemp -d /tmp/ldtr.XXXXXXXXXX)
 

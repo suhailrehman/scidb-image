@@ -79,8 +79,28 @@ int main (int argc, char* argv[])
 	int height = src.height();
 	int channels = src.spectrum();
 	
+	int count = 0;
+	//TODO: Loop over all images in directory
+	while(ptr!=NULL)
+	{
+		//Load next image
+		CImg<unsigned char> next(ptr->filename);
+
+		fprintf (stderr,"Reading file %d: %s\r",count+1, ptr->filename);
+
+
+		if(next.width() != width || next.height() != height || next.spectrum() != channels || next.depth() !=src.depth())
+		{
+			fprintf (stderr,"Bad File: %s\n", ptr->filename);
+			ptr=ptr->next;
+			continue;
+		}
+
+		count++;
+
+	}
 	
-	printf("<f0:double>[i0=0:%d,5000,0,i1=0:%d,5000,0,i2=0:%d,1000,0,i3=0:%d,1,0]\n",width-1,height-1,channels-1,filecount-1);
+	printf("<f0:double>[i0=0:%d,5000,0,i1=0:%d,5000,0,i2=0:%d,1000,0,i3=0:%d,1,0]\n",width-1,height-1,channels-1,count-1);
 
 	
 }
