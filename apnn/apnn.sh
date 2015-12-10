@@ -3,9 +3,9 @@
 #All-Pairs Nearest Neighbors for N Images already stored in SciDB as an Image Volume
 
 #Rank a maxiumum of MAX_RANK images
-MAX_RANK=94
-NUM_IMAGES=93
-CHUNK_SIZE=94
+MAX_RANK=9
+NUM_IMAGES=9
+CHUNK_SIZE=10
 #Check Command Line Agruments
 #if [ $# -eq 0 ]
 #  then

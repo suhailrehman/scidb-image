@@ -12,8 +12,9 @@
 #fi
 
 #python image_load.py $DIRECTORY
+iquery -naq "remove(temp_average)"
 
 time iquery -vnq "SELECT * INTO temp_average FROM image_volume JOIN weights ON image_volume.i3 = weights.i0;"
-time iquery -vnaq "store(aggregate(apply(temp_average,weighted_image,f0*f0_2),sum(weighted_image),i0,i1,i2),average_image);"
+time iquery -vnaq "store(aggregate(apply(temp_average,weighted_image,f0*weight),sum(weighted_image),i0,i1,i2),average_image);"
 
 python image_writeout.py average_image
